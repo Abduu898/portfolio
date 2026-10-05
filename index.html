@@ -3,97 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bahraoui Abderrahim — Portfolio</title>
+
+    <title>Bahraoui Abderrahim</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav>
-      <div class="nav-inner">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+    <header>
+      <div class="logo">W</div>
+      <nav>
+        <a href="#">Main page</a>
+        <a href="#">Talk</a>
+      </nav>
+      <div class="search">
+        <!-- search bar -->
+        <input type="text" placeholder="Search" />
+        <button type="submit">Search</button>
       </div>
-    </nav>
-
-    <header class="hero">
-      <h1>Abderrahim Bahraoui</h1>
-      <p class="tagline">
-        Student at Epitech · Aspiring Cybersecurity Engineer
-      </p>
-      <div class="hero-links">
-        <a href="https://github.com/Abduu898" class="btn">GitHub</a>
-        <a href="#contact" class="btn btn-outline">Contact</a>
+      <div class="header-actions">
+        <!-- header actions -->
+        <button type="button">Appearance</button>
+        <!-- type="button" cause appearance is submitting nothing-->
+        <a href="#">Login</a>
       </div>
     </header>
-
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          I'm a student at Epitech, learning software engineering and
-          cybersecurity. I enjoy solving problems, automating tasks, and
-          understanding how systems work under the hood.
-        </p>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul class="tags">
-          <li>Python</li>
-          <li>Bash</li>
-          <li>Git</li>
-          <li>Linux</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Vigenère Cipher Cracker</h3>
-            <p>
-              Recovers the key from encrypted text using frequency analysis.
-            </p>
-            <span class="tech">Python</span>
-          </article>
-          <article class="card">
-            <h3>Shell Automation Scripts</h3>
-            <p>
-              A set of Bash scripts automating folder creation and batch
-              operations.
-            </p>
-            <span class="tech">Bash</span>
-          </article>
-          <article class="card">
-            <h3>Language Detector</h3>
-            <p>
-              Detects a text's language using Manhattan distance on letter
-              frequencies.
-            </p>
-            <span class="tech">Python</span>
-          </article>
+      <div class="page-tabs">
+        <!-- page tabs -->
+        <div class="page-tabs-left">
+          <a href="#">Article</a>
+          <a href="#">Talk</a>
         </div>
-      </section>
+        <div class="page-tabs-right">
+          <a href="#">Read</a>
+          <a href="#">View source</a>
+          <a href="#">View history</a>
+        </div>
+      </div>
+      <article>
+        <h1>Abderrahim Bahraoui</h1>
+        <p class="article-meta">
+          Computer science student · Epitech Paris · 2026
+        </p>
+        <div class="article-layout">
+          <div class="article-content">
+            <p>
+              Abderrahim Bahraoui is a computer science student interested in
+              software development, cybersecurity, systems and technology.
+            </p>
+            <nav class="table-of-contents">
+              <h2>Contents</h2>
+              <ol>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+              </ol>
+            </nav>
+            <section id="about">
+              <h2>About</h2>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Want to get in touch?</p>
-        <ul class="contact-list">
-          <li><a href="https://github.com/Abduu898">GitHub</a></li>
-          <li><a href="mailto:abderrahim.bahraoui@epitech.eu">Email</a></li>
-          <li><a href="https://linkedin.com/in/abdrrahim-bahraoui">LinkedIn</a></li>
-        </ul>
-      </section>
+              <p>
+                I am a computer science student currently studying at EMSI and
+                spending a semester at Epitech Paris. I am interested in
+                understanding how software and computer systems work, with a
+                growing focus on cybersecurity and systems programming.
+              </p>
+
+              <p>
+                I enjoy learning by building projects, experimenting with
+                technologies, and solving problems rather than only studying
+                theory.
+              </p>
+            </section>
+            <section id="projects">
+              <h2>Projects</h2>
+
+              <p>
+                My projects are focused on learning through practice and
+                applying programming concepts to real problems.
+              </p>
+
+              <h3>Projects and experiments</h3>
+
+              <ul>
+                <li>Software development projects</li>
+                <li>Cybersecurity and systems experiments</li>
+                <li>Web development projects</li>
+              </ul>
+            </section>
+            <section id="contact">
+              <h2>Contact</h2>
+
+              <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message"></textarea>
+
+                <button type="submit">Send</button>
+              </form>
+            </section>
+          </div>
+          <aside class="infobox">
+            <h2>Abderrahim Bahraoui</h2>
+            <p>Computer Science Student</p>
+            <div class="infobox-section">
+              <strong>Education</strong>
+              <p>EMSI · Epitech Paris</p>
+            </div>
+            <div class="infobox-section">
+              <strong>Focus</strong>
+              <p>Software Development · Cybersecurity</p>
+            </div>
+            <div class="infobox-section">
+              <strong>Languages</strong>
+              <p>Arabic · French · English</p>
+            </div>
+            <div class="infobox-section">
+              <strong>Based in</strong>
+              <p>France</p>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <p>From the personal encyclopedia of Abderrahim</p>
     </main>
-
-    <footer>
-      <p>Built with HTML, CSS &amp; JavaScript.</p>
-    </footer>
   </body>
 </html>

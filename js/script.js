@@ -1,15 +1,30 @@
 // ==================== Dark mode toggle ====================
 const toggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
 
+// Apply saved theme on page load
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
+  if (themeIcon) {
+    themeIcon.classList.remove("bi-moon-fill");
+    themeIcon.classList.add("bi-sun-fill");
+  }
 }
 
+// Toggle on click
 if (toggle) {
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     const isDark = document.body.classList.contains("dark");
+
+    // Save preference
     localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Swap the icon
+    if (themeIcon) {
+      themeIcon.classList.toggle("bi-moon-fill", !isDark);
+      themeIcon.classList.toggle("bi-sun-fill", isDark);
+    }
   });
 }
 

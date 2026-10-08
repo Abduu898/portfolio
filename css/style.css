@@ -37,8 +37,9 @@ h2 {
   color: #000000;
   font-weight: normal;
   border-bottom: 1px solid #a2a9b1;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.2rem;
 }
 
 h3 {
@@ -66,6 +67,27 @@ a:hover {
   padding: 0.5rem 1.25rem;
 }
 
+.nav-logo-title {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.nav-logo-subtitle {
+  font-size: 0.75rem;
+  font-family: sans-serif;
+}
+
+.search-wrapper {
+  max-width: 500px;
+}
+
+.search-icon {
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+}
+
 .wiki-search {
   padding-left: 35px !important;
   border-radius: 2px !important;
@@ -90,6 +112,10 @@ a:hover {
 .wiki-nav-actions a:hover {
   color: #202122;
   text-decoration: underline;
+}
+
+.theme-toggle-btn {
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -130,13 +156,37 @@ a:hover {
 }
 
 /* ==========================================================================
+   MAIN CONTAINER
+   ========================================================================== */
+
+.main-container {
+  max-width: 1400px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Lead paragraph — full width above the 3 columns */
+.lead-text {
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+/* ==========================================================================
    TABLE OF CONTENTS
    ========================================================================== */
 
 .table-of-contents {
   background-color: #f8f9fa;
   border: 1px solid #a2a9b1 !important;
-  min-width: 260px;
+  font-size: 0.8125rem;
+  padding: 0.6rem 0.8rem;
+}
+
+/* TOC in normal flow (not sticky) */
+.toc-sidebar .table-of-contents {
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1 !important;
+  font-size: 0.8125rem;
 }
 
 .table-of-contents ol,
@@ -180,6 +230,10 @@ a:hover {
   min-width: 250px;
   border: 1px solid #a2a9b1;
   border-radius: 2px;
+}
+
+.toc-hide {
+  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -232,6 +286,57 @@ a:hover {
 }
 
 /* ==========================================================================
+   CONTENT COLUMN
+   ========================================================================== */
+
+.content-column {
+  min-width: 0;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+.content-column section {
+  margin-bottom: 1.2rem;
+}
+
+.content-column section p {
+  margin-bottom: 0.6rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.content-column ul {
+  padding-left: 1.6rem;
+  margin-left: 0;
+  margin-bottom: 0.8rem;
+  list-style-position: outside;
+}
+
+.content-column ul li {
+  margin-bottom: 0.2rem;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ==========================================================================
+   EXPERIENCE
+   ========================================================================== */
+
+.experience-item p {
+  font-size: 0.95rem;
+}
+
+.experience-item ul {
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.experience-item ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
    REFERENCES, RATIONALE, CATEGORIES, FOOTER
    ========================================================================== */
 
@@ -242,6 +347,10 @@ a:hover {
 
 #references a {
   color: #3366cc;
+}
+
+.references-list {
+  line-height: 1.6;
 }
 
 .wiki-rationale-box {
@@ -271,23 +380,6 @@ a:hover {
 }
 
 /* ==========================================================================
-   EXPERIENCE
-   ========================================================================== */
-
-.experience-item p {
-  font-size: 0.95rem;
-}
-
-.experience-item ul {
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.experience-item ul li {
-  margin-bottom: 0.4rem;
-}
-
-/* ==========================================================================
    CONTACT FORM
    ========================================================================== */
 
@@ -301,23 +393,8 @@ a:hover {
 }
 
 /* ==========================================================================
-   ANIMATIONS
+   SMOOTH SCROLL
    ========================================================================== */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  animation: fadeIn 0.6s ease-in;
-}
 
 html {
   scroll-behavior: smooth;
@@ -364,6 +441,7 @@ body.dark p {
   color: #eaecf0;
 }
 
+/* Navbar */
 body.dark .navbar,
 body.dark .wiki-tabs-wrapper {
   background-color: #101418 !important;
@@ -396,6 +474,11 @@ body.dark .navbar img[alt="Wikipedia Logo"] {
   filter: invert(1) brightness(1.5);
 }
 
+body.dark .theme-toggle-btn,
+body.dark .theme-toggle-btn i {
+  color: #eaecf0 !important;
+}
+
 body.dark .bi-search {
   color: #8a8f98 !important;
 }
@@ -410,6 +493,7 @@ body.dark .wiki-search::placeholder {
   color: #8a8f98 !important;
 }
 
+/* Page tabs */
 body.dark .wiki-tab {
   color: #eaecf0;
 }
@@ -424,6 +508,7 @@ body.dark .wiki-tab a {
   color: #6e9eff;
 }
 
+/* Title */
 body.dark h1.firstHeading {
   color: #eaecf0;
 }
@@ -436,12 +521,18 @@ body.dark .text-muted {
   color: #a2a9b1 !important;
 }
 
+/* Infobox / TOC / rationale box */
 body.dark .infobox,
 body.dark .table-of-contents,
 body.dark .wiki-rationale-box {
   background-color: #1c2026 !important;
   border-color: #3a4048 !important;
   color: #eaecf0;
+}
+
+body.dark .toc-sidebar .table-of-contents {
+  background-color: #1c2026 !important;
+  border-color: #3a4048 !important;
 }
 
 body.dark .infobox-header {
@@ -487,6 +578,7 @@ body.dark .table-of-contents .text-primary {
   color: #6e9eff !important;
 }
 
+/* Categories */
 body.dark .categories-bar {
   border-color: #3a4048 !important;
   background-color: #101418;
@@ -500,10 +592,12 @@ body.dark .categories-bar a {
   color: #6e9eff;
 }
 
+/* References */
 body.dark #references ol li {
   color: #eaecf0;
 }
 
+/* Footer */
 body.dark footer {
   color: #a2a9b1 !important;
   border-color: #3a4048 !important;
@@ -514,6 +608,7 @@ body.dark footer small {
   color: #a2a9b1 !important;
 }
 
+/* Contact */
 body.dark #contact .text-muted {
   color: #a2a9b1 !important;
 }
@@ -541,46 +636,4 @@ body.dark .form-control:focus {
 
 body.dark .contact-form .form-label {
   color: #eaecf0;
-}
-/* ==========================================================================
-   EXTRACTED INLINE STYLES
-   ========================================================================== */
-
-.nav-logo-title {
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo-subtitle {
-  font-size: 0.75rem;
-  font-family: sans-serif;
-}
-
-.search-wrapper {
-  max-width: 500px;
-}
-
-.search-icon {
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  font-size: 0.85rem;
-}
-
-.theme-toggle-btn {
-  text-decoration: none;
-}
-
-.main-container {
-  max-width: 1400px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.toc-hide {
-  cursor: pointer;
-}
-
-.references-list {
-  line-height: 1.6;
 }

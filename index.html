@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- HEADER NAVBAR -->
     <header class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
       <div
         class="container-fluid p-0 d-flex align-items-center justify-content-between"
@@ -63,19 +64,38 @@
 
           <a
             href="#about"
-            class="d-flex align-items-center text-decoration-none text-dark gap-2"
+            class="text-decoration-none text-dark gap-2 nav-branding-wrapper"
           >
-            <img
-              src="assets/logo.png"
-              alt="Wikipedia Logo"
-              height="45"
-              class="object-fit-contain"
-            />
-            <div class="d-flex flex-column lh-1 mt-1">
-              <span class="font-serif fw-bold nav-logo-title">Wikipedia</span>
-              <span class="text-dark nav-logo-subtitle"
-                >The Free Encyclopedia</span
+            <!-- Normal Logo View -->
+            <div id="nav-logo" class="align-items-center gap-2 nav-visible">
+              <img
+                src="assets/logo.png"
+                alt="Wikipedia Logo"
+                height="42"
+                class="object-fit-contain"
+                onerror="this.src = 'https://placehold.co/40'"
+              />
+              <div class="d-flex flex-column lh-1 mt-1">
+                <span class="font-serif fw-bold nav-logo-title">Wikipedia</span>
+                <span class="text-dark nav-logo-subtitle"
+                  >The Free Encyclopedia</span
+                >
+              </div>
+            </div>
+
+            <!-- Scrolled Title View -->
+            <div id="nav-title" class="align-items-center nav-hidden">
+              <span
+                class="fw-bold text-dark"
+                style="
+                  font-size: 1.05rem;
+                  font-family:
+                    -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                    Roboto, sans-serif;
+                "
               >
+                Abderrahim Bahraoui
+              </span>
             </div>
           </a>
         </div>
@@ -107,24 +127,71 @@
             <span>Appearance</span>
           </button>
           <span class="text-muted">|</span>
-          <a href="#">Donate</a>
+          <a href="#" id="donateLink">Donate</a>
           <span class="text-muted">|</span>
-          <a href="#">Create account</a>
+          <a
+            href="https://auth.wikimedia.org/enwiki/wiki/Special:CreateAccount?useformat=desktop&usesul3=1&returnto=Computer+science&centralauthLoginToken=a25433df06e514282ed1ec31e8279b75"
+            >Create account</a
+          >
         </div>
       </div>
     </header>
 
-    <div class="container-fluid py-4 main-container">
+    <!-- MAIN PAGE CONTAINER -->
+    <div class="container-fluid py-3 px-4 wiki-layout-wrapper">
+      <!-- Page Title & Subtitle -->
       <h1 class="firstHeading font-serif mb-1">Abderrahim Bahraoui</h1>
       <div class="text-muted small mb-0">
         From Wikipedia, the free encyclopedia
       </div>
 
+      <!-- Article / History Tabs -->
+      <!-- Article / History Tabs (With Talk Dropdown) -->
       <div class="wiki-tabs-wrapper">
         <div class="d-flex">
           <div class="wiki-tab active">Article</div>
-          <div class="wiki-tab"><a href="#">Talk</a></div>
+
+          <!-- Talk Tab with Dropdown -->
+          <div class="wiki-tab dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle-no-caret"
+              id="talkDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Talk
+            </a>
+            <div
+              class="dropdown-menu talk-dropdown-menu shadow-sm py-2 px-3 mt-1"
+              aria-labelledby="talkDropdown"
+            >
+              <a
+                class="dropdown-item wiki-talk-link"
+                href="mailto:bahraoui.abdrrahim@gmail.com"
+                >Email</a
+              >
+              <a class="dropdown-item wiki-talk-link" href="tel:+33751277431"
+                >Phone number</a
+              >
+              <a
+                class="dropdown-item wiki-talk-link"
+                href="https://www.linkedin.com/in/abdrrahim-bahraoui-8b96b81b4/?isSelfProfile=true"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a
+                class="dropdown-item wiki-talk-link"
+                href="https://github.com/Abduu898"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
         </div>
+
         <div class="d-flex ms-auto">
           <div class="wiki-tab active">Read</div>
           <div class="wiki-tab"><a href="#">View source</a></div>
@@ -133,39 +200,115 @@
         </div>
       </div>
 
+      <!-- Lead paragraph -->
       <p class="lead-text">
         <strong>Abderrahim Bahraoui</strong> is a computer science student at
         Epitech Paris and EMSI. He specializes in software development, C and
         Python programming, web integration, and IT project coordination.
       </p>
 
-      <article class="row mt-3">
-        <aside class="col-lg-3 order-lg-1 d-none d-lg-block toc-sidebar">
-          <nav class="table-of-contents border bg-light p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <strong class="small fw-bold">Contents</strong>
-              <span class="text-primary small toc-hide">hide</span>
+      <!-- Main Content Layout Area (Floated Elements) -->
+      <div class="wiki-flow-container mt-2">
+        <!-- 1. RIGHT INFOBOX (Floated Right) -->
+        <aside class="infobox border p-2 bg-light text-center small mb-3">
+          <div class="infobox-header fw-bold p-1 mb-2">Abderrahim Bahraoui</div>
+          <div class="text-muted mb-2 font-serif">
+            <em>Computer Science Student</em>
+          </div>
+
+          <div class="infobox-image mb-2">
+            <img
+              src="assets/photo.jpg"
+              alt="Abderrahim Bahraoui"
+              class="img-fluid border"
+              onerror="this.src = 'https://placehold.co/260x180'"
+            />
+            <div class="text-muted mt-1 pt-1 infobox-image-caption">
+              Abderrahim Bahraoui, 2026
             </div>
-            <ol class="mb-0 ps-3 small">
-              <li><a href="#about">About</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li>
-                <a href="#projects">Projects</a>
-                <ol class="ps-3 mb-0 mt-1">
-                  <li><a href="#proj-portfolio">4.1 Wikipedia Portfolio</a></li>
-                  <li><a href="#proj-systems">4.2 Systems & C</a></li>
-                </ol>
-              </li>
-              <li><a href="#learning">Learning / Progress</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#references">References</a></li>
-            </ol>
-          </nav>
+          </div>
+
+          <table
+            class="table table-sm table-borderless text-start align-middle mb-0 infobox-table"
+          >
+            <tbody>
+              <tr class="border-top">
+                <th scope="row">Location</th>
+                <td>Paris, France</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Education</th>
+                <td>Epitech Paris · EMSI</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">GitHub</th>
+                <td>
+                  <a
+                    href="https://github.com/Abduu898"
+                    target="_blank"
+                    rel="noopener"
+                    >Abduu898</a
+                  >
+                </td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">LinkedIn</th>
+                <td>
+                  <a
+                    href="https://www.linkedin.com/in/abdrrahim-bahraoui-8b96b81b4/?isSelfProfile=true"
+                    target="_blank"
+                    rel="noopener"
+                    >LinkedIn Profile</a
+                  >
+                </td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Email</th>
+                <td>
+                  <a href="mailto:bahraoui.abdrrahim@gmail.com">Send Email</a>
+                </td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Resume</th>
+                <td><a href="assets/cv.pdf" download>Download CV</a></td>
+              </tr>
+              <tr class="border-top">
+                <td colspan="2" class="infobox-subheader">Skills</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Programming</th>
+                <td>C, Python, JavaScript, HTML5, CSS3</td>
+              </tr>
+            </tbody>
+          </table>
         </aside>
 
-        <div class="col-lg-6 col-md-7 order-lg-2 content-column">
+        <!-- 2. LEFT TABLE OF CONTENTS (Floated Left) -->
+        <nav class="table-of-contents border bg-light p-3 mb-3 toc-sidebar">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <strong class="small fw-bold">Contents</strong>
+            <span class="text-primary small toc-hide">hide</span>
+          </div>
+          <ol class="mb-0 ps-3 small">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li>
+              <a href="#projects">Projects</a>
+              <ol class="ps-3 mb-0 mt-1">
+                <li><a href="#proj-portfolio">4.1 Wikipedia Portfolio</a></li>
+                <li><a href="#proj-systems">4.2 Systems & C</a></li>
+              </ol>
+            </li>
+            <li><a href="#learning">Learning / Progress</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#references">References</a></li>
+          </ol>
+        </nav>
+
+        <!-- 3. ARTICLE CONTENT (Wraps around TOC & Infobox) -->
+        <main class="content-body">
           <section id="about" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">About</h2>
             <p>
@@ -271,49 +414,78 @@
             </p>
           </section>
 
+          <!-- Section Contact Form (Special:EmailUser Style) -->
           <section id="contact" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">Contact</h2>
             <p class="text-muted small">
-              Have a question or want to get in touch? Send me a message.
+              You can send an email message to Abderrahim Bahraoui using the
+              form below.
             </p>
 
-            <form id="contactForm" class="contact-form" novalidate>
-              <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="form-control"
-                  required
-                />
+            <form
+              id="contactForm"
+              class="contact-form border p-3 bg-light"
+              style="max-width: 550px; border-color: #a2a9b1 !important"
+              novalidate
+            >
+              <div class="mb-2 row align-items-center">
+                <label
+                  for="name"
+                  class="col-sm-3 col-form-label col-form-label-sm fw-semibold text-end"
+                  >Your name:</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control form-control-sm wiki-input"
+                    required
+                  />
+                </div>
               </div>
 
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="form-control"
-                  required
-                />
+              <div class="mb-2 row align-items-center">
+                <label
+                  for="email"
+                  class="col-sm-3 col-form-label col-form-label-sm fw-semibold text-end"
+                  >Your email:</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control form-control-sm wiki-input"
+                    required
+                  />
+                </div>
               </div>
 
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-control"
-                  rows="5"
-                  required
-                ></textarea>
+              <div class="mb-3 row">
+                <label
+                  for="message"
+                  class="col-sm-3 col-form-label col-form-label-sm fw-semibold text-end"
+                  >Message:</label
+                >
+                <div class="col-sm-9">
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control form-control-sm wiki-input"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
               </div>
 
-              <button type="submit" class="btn btn-primary">Send</button>
+              <div class="row">
+                <div class="col-sm-9 offset-sm-3">
+                  <button type="submit" class="wiki-btn">Send message</button>
+                </div>
+              </div>
 
-              <div id="formFeedback" class="mt-2 small"></div>
+              <div id="formFeedback" class="mt-2 small text-center"></div>
             </form>
           </section>
 
@@ -329,8 +501,10 @@
                   </li>
                   <li id="cite_note-2">
                     LinkedIn profile.
-                    <a href="#">linkedin.com/in/abderrahimbahraoui</a>.
-                    Retrieved 8 October 2026.
+                    <a
+                      href="https://www.linkedin.com/in/abdrrahim-bahraoui-8b96b81b4/?isSelfProfile=true"
+                      >linkedin.com/in/abdrrahim-bahraoui-8b96b81b4</a
+                    >. Retrieved 8 October 2026.
                   </li>
                   <li id="cite_note-3">
                     GitHub profile and repositories.
@@ -407,84 +581,13 @@
               >Open-source software developers</a
             >
           </div>
-        </div>
+        </main>
 
-        <aside class="col-lg-3 col-md-5 order-lg-3 mb-4">
-          <div class="infobox border p-2 bg-light text-center small">
-            <div class="infobox-header fw-bold p-1 mb-2">
-              Abderrahim Bahraoui
-            </div>
-            <div class="text-muted mb-2 font-serif">
-              <em>Computer Science Student</em>
-            </div>
-
-            <div class="infobox-image mb-2">
-              <img
-                src="assets/photo.jpg"
-                alt="Abderrahim Bahraoui"
-                class="img-fluid border"
-                onerror="this.src = 'https://placehold.co/260x180'"
-              />
-              <div class="text-muted mt-1 pt-1 infobox-image-caption">
-                Abderrahim Bahraoui, 2026
-              </div>
-            </div>
-
-            <table
-              class="table table-sm table-borderless text-start align-middle mb-0 infobox-table"
-            >
-              <tbody>
-                <tr class="border-top">
-                  <th scope="row">Location</th>
-                  <td>Paris, France</td>
-                </tr>
-                <tr class="border-top">
-                  <th scope="row">Education</th>
-                  <td>Epitech Paris · EMSI</td>
-                </tr>
-                <tr class="border-top">
-                  <th scope="row">GitHub</th>
-                  <td>
-                    <a
-                      href="https://github.com/Abduu898"
-                      target="_blank"
-                      rel="noopener"
-                      >Abduu898</a
-                    >
-                  </td>
-                </tr>
-                <tr class="border-top">
-                  <th scope="row">LinkedIn</th>
-                  <td>
-                    <a href="#" target="_blank" rel="noopener"
-                      >LinkedIn Profile</a
-                    >
-                  </td>
-                </tr>
-                <tr class="border-top">
-                  <th scope="row">Email</th>
-                  <td>
-                    <a href="mailto:bahraoui.abdrrahim@gmail.com">Send Email</a>
-                  </td>
-                </tr>
-                <tr class="border-top">
-                  <th scope="row">Resume</th>
-                  <td><a href="assets/cv.pdf" download>Download CV</a></td>
-                </tr>
-                <tr class="border-top">
-                  <td colspan="2" class="infobox-subheader">Skills</td>
-                </tr>
-                <tr class="border-top">
-                  <th scope="row">Programming</th>
-                  <td>C, Python, JavaScript, HTML5, CSS3</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </aside>
-      </article>
+        <div class="clearfix"></div>
+      </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="border-top py-4 mt-2 text-muted small footer-inner">
       <p class="mb-0">
         This page was last edited on 8 October 2026, at 10:25 (CEST).

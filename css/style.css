@@ -1,21 +1,23 @@
 /* ==========================================================================
-   WIKIPEDIA VECTOR 2022 CLONE
+   WIKIPEDIA VECTOR 2022 CLONE - COMPLETE & CLEANED CSS
    ========================================================================== */
 
 /* ==========================================================================
-   BASE
+   1. BASE TYPOGRAPHY & COLORS
    ========================================================================== */
 
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Lato",
     "Helvetica", "Arial", sans-serif;
+  font-size: 0.875rem; /* 14px Wikipedia standard */
   color: #202122;
   background-color: #ffffff;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .font-serif,
@@ -30,28 +32,35 @@ h1.firstHeading {
   color: #000000;
   font-weight: normal;
   border-bottom: none;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
 }
 
 h2 {
   font-size: 1.5rem;
   color: #000000;
-  font-weight: normal;
+  font-weight: normal; /* MediaWiki headings are normal weight, not bold */
   border-bottom: 1px solid #a2a9b1;
-  margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
   padding-bottom: 0.2rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: bold;
   margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin-bottom: 0.6rem;
+  font-size: 0.875rem;
 }
 
 a {
   color: #3366cc;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -59,41 +68,78 @@ a:hover {
 }
 
 /* ==========================================================================
-   HEADER & NAVBAR
+   2. HEADER & NAVBAR
    ========================================================================== */
 
 .navbar {
-  min-height: 56px;
-  padding: 0.5rem 1.25rem;
+  min-height: 52px;
+  padding: 0.4rem 1.25rem;
+}
+
+.nav-branding-wrapper {
+  position: relative;
+  min-width: 220px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+#nav-logo,
+#nav-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+  will-change: opacity, transform;
+}
+
+.nav-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+  transform: translateY(-4px);
+}
+
+.nav-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .nav-logo-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   letter-spacing: -0.02em;
 }
 
 .nav-logo-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-family: sans-serif;
 }
 
 .search-wrapper {
-  max-width: 500px;
+  max-width: 480px;
 }
 
 .search-icon {
   top: 50%;
-  left: 12px;
+  left: 10px;
   transform: translateY(-50%);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .wiki-search {
-  padding-left: 35px !important;
+  padding-left: 32px !important;
   border-radius: 2px !important;
   border: 1px solid #a2a9b1 !important;
-  font-size: 0.875rem !important;
-  height: 34px !important;
+  font-size: 0.85rem !important;
+  height: 32px !important;
 }
 
 .wiki-search:focus {
@@ -102,7 +148,7 @@ a:hover {
 }
 
 .wiki-nav-actions {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 
 .wiki-nav-actions a {
@@ -110,16 +156,17 @@ a:hover {
 }
 
 .wiki-nav-actions a:hover {
-  color: #202122;
+  color: #3366cc;
   text-decoration: underline;
 }
 
 .theme-toggle-btn {
   text-decoration: none;
+  font-size: 0.85rem;
 }
 
 /* ==========================================================================
-   RECTANGULAR TABS
+   3. RECTANGULAR VECTOR TABS
    ========================================================================== */
 
 .wiki-tabs-wrapper {
@@ -128,12 +175,12 @@ a:hover {
   border-top: 1px solid #a2a9b1;
   border-bottom: 1px solid #a2a9b1;
   margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
 }
 
 .wiki-tab {
-  padding: 0.35rem 0.8rem;
+  padding: 0.3rem 0.75rem;
   margin-bottom: -1px;
   position: relative;
 }
@@ -156,37 +203,41 @@ a:hover {
 }
 
 /* ==========================================================================
-   MAIN CONTAINER
+   4. LAYOUT CONTROL & FLOW WRAPPER
    ========================================================================== */
 
-.main-container {
-  max-width: 1400px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+.wiki-layout-wrapper {
+  max-width: 100% !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
 }
 
-/* Lead paragraph — full width above the 3 columns */
+.wiki-flow-container {
+  position: relative;
+  width: 100%;
+}
+
 .lead-text {
-  margin-bottom: 1.5rem;
-  padding: 0;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
-   TABLE OF CONTENTS
+   5. TABLE OF CONTENTS (FLOATED LEFT)
    ========================================================================== */
 
-.table-of-contents {
+.table-of-contents.toc-sidebar {
+  float: left;
+  width: 210px;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  clear: left;
   background-color: #f8f9fa;
   border: 1px solid #a2a9b1 !important;
   font-size: 0.8125rem;
   padding: 0.6rem 0.8rem;
-}
-
-/* TOC in normal flow (not sticky) */
-.toc-sidebar .table-of-contents {
-  background-color: #f8f9fa;
-  border: 1px solid #a2a9b1 !important;
-  font-size: 0.8125rem;
+  border-radius: 2px;
 }
 
 .table-of-contents ol,
@@ -194,7 +245,7 @@ a:hover {
   list-style-type: none;
   counter-reset: item;
   padding-left: 0 !important;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .table-of-contents ol li,
@@ -207,13 +258,13 @@ a:hover {
   content: counter(item) " ";
   font-weight: bold;
   color: #202122;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 
 .table-of-contents ol li ol,
 .toc-dropdown ol li ol {
   counter-reset: subitem;
-  margin-left: 18px !important;
+  margin-left: 16px !important;
 }
 
 .table-of-contents ol li ol li,
@@ -227,122 +278,160 @@ a:hover {
 }
 
 .toc-dropdown {
-  min-width: 250px;
+  min-width: 240px;
   border: 1px solid #a2a9b1;
   border-radius: 2px;
 }
 
 .toc-hide {
   cursor: pointer;
+  color: #3366cc;
 }
 
 /* ==========================================================================
-   INFOBOX
+   6. RIGHT INFOBOX (FLOATED RIGHT)
    ========================================================================== */
 
 .infobox {
+  float: right;
+  width: 300px;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  clear: right;
   border: 1px solid #a2a9b1 !important;
   background-color: #f8f9fa;
-  font-size: 0.85rem;
-  transition: box-shadow 0.3s ease;
-}
-
-.infobox:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 0.8125rem;
+  border-radius: 0;
 }
 
 .infobox-header {
   background-color: #b0c4de;
   color: #202122;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
 }
 
 .infobox-image img {
-  max-height: 250px;
+  max-height: 260px;
+  width: 100%;
   object-fit: cover;
 }
 
 .infobox-image-caption {
-  font-size: 0.8rem;
+  font-size: 0.775rem;
 }
 
 .infobox-table th {
   background-color: transparent;
-  width: 35%;
+  width: 32%;
   font-weight: bold;
   color: #202122;
+  padding: 0.25rem 0.4rem;
 }
 
 .infobox-table td {
   color: #202122;
+  padding: 0.25rem 0.4rem;
 }
 
 .infobox-subheader {
   background-color: #e6e6fa !important;
   text-align: center;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   padding: 4px 0 !important;
 }
 
 /* ==========================================================================
-   CONTENT COLUMN
+   7. ARTICLE CONTENT & EXPERIENCE LISTS
    ========================================================================== */
 
-.content-column {
+.content-body {
   min-width: 0;
   overflow-wrap: break-word;
   line-height: 1.6;
 }
 
-.content-column section {
-  margin-bottom: 1.2rem;
+.content-body section {
+  margin-bottom: 1.5rem;
 }
 
-.content-column section p {
+.content-body ul {
+  padding-left: 1.4rem;
   margin-bottom: 0.6rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
-.content-column ul {
-  padding-left: 1.6rem;
-  margin-left: 0;
-  margin-bottom: 0.8rem;
-  list-style-position: outside;
-}
-
-.content-column ul li {
-  margin-bottom: 0.2rem;
+.content-body ul li {
+  margin-bottom: 0.25rem;
   line-height: 1.55;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
-
-/* ==========================================================================
-   EXPERIENCE
-   ========================================================================== */
 
 .experience-item p {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
 }
 
 .experience-item ul {
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
 }
 
 .experience-item ul li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 /* ==========================================================================
-   REFERENCES, RATIONALE, CATEGORIES, FOOTER
+   8. WIKIPEDIA FORM STYLING (SPECIAL:EMAILUSER)
+   ========================================================================== */
+
+.contact-form {
+  border-radius: 0;
+}
+
+.wiki-input {
+  border-radius: 2px !important;
+  border: 1px solid #a2a9b1 !important;
+  background-color: #ffffff;
+  font-size: 0.85rem !important;
+}
+
+.wiki-input:focus {
+  border-color: #3366cc !important;
+  box-shadow: inset 0 0 0 1px #3366cc !important;
+}
+
+.wiki-btn {
+  background-color: #f8f9fa;
+  color: #202122;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: 4px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.1s,
+    border-color 0.1s;
+}
+
+.wiki-btn:hover {
+  background-color: #ffffff;
+  border-color: #72777d;
+}
+
+.wiki-btn:active {
+  background-color: #c8ccd1;
+  border-color: #72777d;
+}
+
+/* ==========================================================================
+   9. REFERENCES, RATIONALE & FOOTER
    ========================================================================== */
 
 #references ol li {
   margin-bottom: 0.25rem;
   color: #202122;
+  font-size: 0.8125rem;
 }
 
 #references a {
@@ -350,18 +439,20 @@ a:hover {
 }
 
 .references-list {
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .wiki-rationale-box {
   border-color: #a2a9b1 !important;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  border-radius: 0;
 }
 
 .categories-bar {
   border-color: #a2a9b1 !important;
   background-color: #ffffff;
+  font-size: 0.8125rem;
 }
 
 .categories-bar a {
@@ -373,53 +464,56 @@ a:hover {
 }
 
 .footer-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  max-width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  font-size: 0.8125rem;
 }
-
-/* ==========================================================================
-   CONTACT FORM
-   ========================================================================== */
-
-.contact-form {
-  max-width: 600px;
-}
-
-.contact-form .form-label {
-  font-weight: bold;
-  color: #202122;
-}
-
-/* ==========================================================================
-   SMOOTH SCROLL
-   ========================================================================== */
 
 html {
   scroll-behavior: smooth;
 }
 
 /* ==========================================================================
-   LAYOUT CONTROL
+   10. DROPDOWN ANIMATION
    ========================================================================== */
 
-@media (min-width: 992px) {
-  .infobox {
-    max-width: 320px;
-  }
+.dropdown-menu {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+  pointer-events: none;
 }
 
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   11. MOBILE RESPONSIVENESS
+   ========================================================================== */
+
 @media (max-width: 767.98px) {
+  .table-of-contents.toc-sidebar,
   .infobox {
-    max-width: 100%;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
 /* ==========================================================================
-   DARK MODE
+   12. DARK MODE
    ========================================================================== */
 
 body.dark {
@@ -433,15 +527,15 @@ body.dark a {
 
 body.dark h1,
 body.dark h2,
-body.dark h3 {
-  color: #eaecf0;
-}
-
+body.dark h3,
 body.dark p {
   color: #eaecf0;
 }
 
-/* Navbar */
+body.dark #nav-title span {
+  color: #eaecf0 !important;
+}
+
 body.dark .navbar,
 body.dark .wiki-tabs-wrapper {
   background-color: #101418 !important;
@@ -466,21 +560,8 @@ body.dark .navbar .text-muted {
   color: #a2a9b1 !important;
 }
 
-body.dark .navbar .bi-list {
-  color: #eaecf0;
-}
-
 body.dark .navbar img[alt="Wikipedia Logo"] {
   filter: invert(1) brightness(1.5);
-}
-
-body.dark .theme-toggle-btn,
-body.dark .theme-toggle-btn i {
-  color: #eaecf0 !important;
-}
-
-body.dark .bi-search {
-  color: #8a8f98 !important;
 }
 
 body.dark .wiki-search {
@@ -489,11 +570,6 @@ body.dark .wiki-search {
   border-color: #3a4048 !important;
 }
 
-body.dark .wiki-search::placeholder {
-  color: #8a8f98 !important;
-}
-
-/* Page tabs */
 body.dark .wiki-tab {
   color: #eaecf0;
 }
@@ -504,35 +580,12 @@ body.dark .wiki-tab.active {
   color: #eaecf0;
 }
 
-body.dark .wiki-tab a {
-  color: #6e9eff;
-}
-
-/* Title */
-body.dark h1.firstHeading {
-  color: #eaecf0;
-}
-
-body.dark .container-fluid > .text-muted {
-  color: #a2a9b1 !important;
-}
-
-body.dark .text-muted {
-  color: #a2a9b1 !important;
-}
-
-/* Infobox / TOC / rationale box */
 body.dark .infobox,
 body.dark .table-of-contents,
 body.dark .wiki-rationale-box {
   background-color: #1c2026 !important;
   border-color: #3a4048 !important;
   color: #eaecf0;
-}
-
-body.dark .toc-sidebar .table-of-contents {
-  background-color: #1c2026 !important;
-  border-color: #3a4048 !important;
 }
 
 body.dark .infobox-header {
@@ -545,12 +598,6 @@ body.dark .infobox-subheader {
   color: #eaecf0;
 }
 
-body.dark .infobox-table {
-  --bs-table-bg: transparent;
-  --bs-table-color: #eaecf0;
-  background-color: transparent;
-}
-
 body.dark .infobox-table th,
 body.dark .infobox-table td {
   background-color: transparent !important;
@@ -558,82 +605,82 @@ body.dark .infobox-table td {
   border-color: #3a4048 !important;
 }
 
-body.dark .infobox-table tr {
-  background-color: transparent !important;
-}
-
-body.dark .infobox-table .border-top {
-  border-color: #3a4048 !important;
-}
-
-body.dark .infobox em {
-  color: #a2a9b1 !important;
-}
-
-body.dark .wiki-rationale-box p {
-  color: #eaecf0 !important;
-}
-
-body.dark .table-of-contents .text-primary {
-  color: #6e9eff !important;
-}
-
-/* Categories */
 body.dark .categories-bar {
   border-color: #3a4048 !important;
   background-color: #101418;
 }
 
-body.dark .categories-bar strong {
-  color: #eaecf0 !important;
+body.dark .dropdown-menu {
+  background-color: #1c2026;
+  border-color: #3a4048;
 }
 
-body.dark .categories-bar a {
-  color: #6e9eff;
-}
-
-/* References */
-body.dark #references ol li {
-  color: #eaecf0;
-}
-
-/* Footer */
-body.dark footer {
-  color: #a2a9b1 !important;
+body.dark .contact-form {
+  background-color: #1c2026 !important;
   border-color: #3a4048 !important;
 }
 
-body.dark footer p,
-body.dark footer small {
-  color: #a2a9b1 !important;
+body.dark .wiki-input {
+  background-color: #101418 !important;
+  color: #eaecf0 !important;
+  border-color: #3a4048 !important;
 }
 
-/* Contact */
-body.dark #contact .text-muted {
-  color: #a2a9b1 !important;
-}
-
-body.dark .content-column p,
-body.dark .content-column li,
-body.dark .content-column span:not(.text-primary) {
-  color: #eaecf0;
-}
-
-body.dark .content-column .text-muted {
-  color: #a2a9b1 !important;
-}
-
-body.dark .form-control {
-  background-color: #1c2026;
+body.dark .wiki-btn {
+  background-color: #272d35;
   color: #eaecf0;
   border-color: #3a4048;
 }
 
-body.dark .form-control:focus {
-  background-color: #1c2026;
-  color: #eaecf0;
+body.dark .wiki-btn:hover {
+  background-color: #3a4048;
 }
 
-body.dark .contact-form .form-label {
-  color: #eaecf0;
+body.dark footer {
+  color: #a2a9b1 !important;
+  border-color: #3a4048 !important;
+}
+/* ==========================================================================
+   TALK TAB DROPDOWN (Vector Popup Menu)
+   ========================================================================== */
+
+.talk-dropdown-menu {
+  min-width: 160px;
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1 !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.wiki-talk-link {
+  color: #3366cc !important;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.4rem !important;
+  background: transparent !important;
+  line-height: 1.4;
+}
+
+.wiki-talk-link:hover {
+  text-decoration: underline !important;
+  background-color: #f0f4f8 !important;
+}
+
+/* Remove default Bootstrap dropdown arrow caret */
+.dropdown-toggle-no-caret::after {
+  display: none !important;
+}
+
+/* Dark Mode Support for Talk Dropdown */
+body.dark .talk-dropdown-menu {
+  background-color: #1c2026 !important;
+  border-color: #3a4048 !important;
+}
+
+body.dark .wiki-talk-link {
+  color: #6e9eff !important;
+}
+
+body.dark .wiki-talk-link:hover {
+  background-color: #272d35 !important;
 }

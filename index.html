@@ -3,387 +3,502 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abderrahim Bahraoui - Wikipedia</title>
 
-    <title>Bahraoui Abderrahim</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="navbar navbar-expand-lg border-bottom px-3 py-2 bg-white">
+    <header
+      class="navbar navbar-expand-lg bg-white sticky-top border-bottom"
+      style="min-height: 56px; padding: 0.5rem 1.25rem"
+    >
       <div
-        class="container-fluid d-flex align-items-center justify-content-between" 
+        class="container-fluid p-0 d-flex align-items-center justify-content-between"
       >
         <div class="d-flex align-items-center gap-3">
-          <a href="https://www.wikipedia.org/" class="d-inline-block">
+          <div class="dropdown">
+            <button
+              class="btn btn-link text-dark p-0 border-0 fs-4"
+              type="button"
+              id="tocDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="outline: none; box-shadow: none"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+            <div
+              class="dropdown-menu shadow-sm p-3 mt-3 toc-dropdown"
+              aria-labelledby="tocDropdown"
+            >
+              <h6
+                class="dropdown-header px-0 text-dark fw-bold border-bottom pb-2 mb-2"
+              >
+                Contents
+              </h6>
+              <ol class="ps-3 mb-0 small">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li>
+                  <a href="#projects">Projects</a>
+                  <ol class="ps-3 my-1">
+                    <li>
+                      <a href="#proj-portfolio">4.1 Wikipedia Portfolio</a>
+                    </li>
+                    <li><a href="#proj-systems">4.2 Systems & C</a></li>
+                  </ol>
+                </li>
+                <li><a href="#learning">Learning / Progress</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#references">References</a></li>
+              </ol>
+            </div>
+          </div>
+
+          <a
+            href="#about"
+            class="d-flex align-items-center text-decoration-none text-dark gap-2"
+          >
             <img
-              src="assets/wikilogo.png"
-              alt="Logo"
-              height="100"
+              src="assets/logo.png"
+              alt="Wikipedia Logo"
+              height="45"
               class="object-fit-contain"
             />
+            <div class="d-flex flex-column lh-1 mt-1">
+              <span
+                class="font-serif fw-bold"
+                style="font-size: 1.25rem; letter-spacing: -0.02em"
+                >Wikipedia</span
+              >
+              <span
+                class="text-dark"
+                style="font-size: 0.75rem; font-family: sans-serif"
+                >The Free Encyclopedia</span
+              >
+            </div>
           </a>
-
-          <nav class="d-flex gap-2">
-            <a
-              href="#about"
-              class="text-decoration-none fw-semibold link-primary"
-            >
-              Main page
-            </a>
-            <a href="#" class="text-decoration-none text-muted">Talk</a>
-          </nav>
         </div>
 
-        <!-- Center Search Bar -->
-        <div class="search-bar my-1" style="max-width: 400px; width: 100%">
-          <div class="input-group">
+        <div class="d-none d-md-flex flex-grow-1 justify-content-center mx-4">
+          <div class="position-relative w-100" style="max-width: 500px">
+            <i
+              class="bi bi-search position-absolute text-secondary"
+              style="
+                top: 50%;
+                left: 12px;
+                transform: translateY(-50%);
+                font-size: 0.85rem;
+              "
+            ></i>
             <input
               type="text"
-              class="form-control form-control-sm"
-              placeholder="Search Wikipedia..."
-              aria-label="Search"
+              class="form-control shadow-none wiki-search"
+              placeholder="Search Wikipedia"
             />
-            <button class="btn btn-outline-secondary btn-sm" type="button">
-              Search
-            </button>
           </div>
         </div>
 
-        <!-- Right Actions -->
-        <div class="header-actions d-flex align-items-center gap-2">
-          <button type="button" class="btn btn-sm btn-light border">
-            Appearance
+        <div class="d-none d-lg-flex align-items-center gap-2 wiki-nav-actions">
+          <button
+            id="themeToggle"
+            type="button"
+            class="btn btn-link text-dark p-0 border-0 d-flex align-items-center gap-1"
+            style="text-decoration: none"
+          >
+            <i class="bi bi-moon-fill" style="font-size: 0.8rem"></i>
+            <span>Appearance</span>
           </button>
-          <a href="#" class="btn btn-sm btn-link text-decoration-none">Login</a>
+          <span class="text-muted">|</span>
+          <a href="#">Donate</a>
+          <span class="text-muted">|</span>
+          <a href="#">Create account</a>
         </div>
       </div>
     </header>
 
-    <!-- 2. Main Page Grid Wrapper (Sidebar left, Article right) -->
-    <div class="container-fluid">
-      <div class="row">
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar col-md-3 col-lg-2 bg-light border-end py-3">
-          <div class="sidebar-group mb-4">
-            <h6 class="text-uppercase text-muted fw-bold fs-7 mb-2">
-              Navigation
-            </h6>
-            <ul class="list-unstyled">
-              <li class="mb-1">
-                <a href="#about" class="text-decoration-none link-secondary"
-                  >Main page</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#projects" class="text-decoration-none link-secondary"
-                  >Projects</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#skills" class="text-decoration-none link-secondary"
-                  >Skills</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#education" class="text-decoration-none link-secondary"
-                  >Education</a
-                >
-              </li>
-              <li class="mb-1">
-                <a
-                  href="#experience"
-                  class="text-decoration-none link-secondary"
-                  >Experience</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#learning" class="text-decoration-none link-secondary"
-                  >Learning / Progress</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#contact" class="text-decoration-none link-secondary"
-                  >Contact</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#cv" class="text-decoration-none link-secondary">CV</a>
-              </li>
-            </ul>
-          </div>
+    <div
+      class="container-fluid py-4"
+      style="max-width: 1400px; padding-left: 2rem; padding-right: 2rem"
+    >
+      <h1 class="firstHeading font-serif mb-1">Abderrahim Bahraoui</h1>
+      <div class="text-muted small mb-0">
+        From Wikipedia, the free encyclopedia
+      </div>
 
-          <div class="sidebar-group">
-            <h6 class="text-uppercase text-muted fw-bold fs-7 mb-2">Tools</h6>
-            <ul class="list-unstyled">
-              <li class="mb-1">
-                <a href="#" class="text-decoration-none text-muted"
-                  >What links here</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#" class="text-decoration-none text-muted"
-                  >Related changes</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#" class="text-decoration-none text-muted"
-                  >Special pages</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#" class="text-decoration-none text-muted"
-                  >Printable version</a
-                >
-              </li>
-              <li class="mb-1">
-                <a href="#" class="text-decoration-none text-muted"
-                  >Permanent link</a
-                >
-              </li>
-            </ul>
+      <div class="wiki-tabs-wrapper">
+        <div class="d-flex">
+          <div class="wiki-tab active">Article</div>
+          <div class="wiki-tab"><a href="#">Talk</a></div>
+        </div>
+        <div class="d-flex ms-auto">
+          <div class="wiki-tab active">Read</div>
+          <div class="wiki-tab"><a href="#">View source</a></div>
+          <div class="wiki-tab"><a href="#">View history</a></div>
+          <div class="wiki-tab"><a href="#">Tools</a></div>
+        </div>
+      </div>
+
+      <article class="row mt-3">
+        <aside class="col-lg-4 col-md-5 order-lg-2 mb-4">
+          <div class="infobox border p-2 bg-light text-center small">
+            <div class="infobox-header fw-bold p-1 mb-2">
+              Abderrahim Bahraoui
+            </div>
+            <div class="text-muted mb-2 font-serif">
+              <em>Computer Science Student</em>
+            </div>
+
+            <div class="infobox-image mb-2">
+              <img
+                src="assets/photo.jpg"
+                alt="Abderrahim Bahraoui"
+                class="img-fluid border"
+                style="max-height: 250px; object-fit: cover"
+                onerror="this.src = 'https://placehold.co/260x180'"
+              />
+              <div class="text-muted mt-1 pt-1" style="font-size: 0.8rem">
+                Abderrahim Bahraoui, 2026
+              </div>
+            </div>
+
+            <table
+              class="table table-sm table-borderless text-start align-middle mb-0 infobox-table"
+            >
+              <tbody>
+                <tr class="border-top">
+                  <th scope="row">Location</th>
+                  <td>Paris, France</td>
+                </tr>
+                <tr class="border-top">
+                  <th scope="row">Education</th>
+                  <td>Epitech Paris · EMSI</td>
+                </tr>
+                <tr class="border-top">
+                  <th scope="row">GitHub</th>
+                  <td>
+                    <a
+                      href="https://github.com/Abduu898"
+                      target="_blank"
+                      rel="noopener"
+                      >Abduu898</a
+                    >
+                  </td>
+                </tr>
+                <tr class="border-top">
+                  <th scope="row">LinkedIn</th>
+                  <td>
+                    <a href="#" target="_blank" rel="noopener"
+                      >LinkedIn Profile</a
+                    >
+                  </td>
+                </tr>
+                <tr class="border-top">
+                  <th scope="row">Email</th>
+                  <td>
+                    <a href="mailto:bahraoui.abdrrahim@gmail.com">Send Email</a>
+                  </td>
+                </tr>
+                <tr class="border-top">
+                  <th scope="row">Resume</th>
+                  <td><a href="assets/cv.pdf" download>Download CV</a></td>
+                </tr>
+                <tr class="border-top">
+                  <td colspan="2" class="infobox-subheader">Skills</td>
+                </tr>
+                <tr class="border-top">
+                  <th scope="row">Programming</th>
+                  <td>C, Python, JavaScript, HTML5, CSS3</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </aside>
 
-        <!-- MAIN ARTICLE AREA -->
-        <main class="col-md-9 col-lg-10 px-md-4 py-3">
-          <div class="page-tabs">
-            <div class="page-tabs-left">
-              <a href="#">Article</a>
-              <a href="#">Talk</a>
-            </div>
-            <div class="page-tabs-right">
-              <a href="#">Read</a>
-              <a href="#">View source</a>
-              <a href="#">View history</a>
-            </div>
-          </div>
+        <div class="col-lg-8 col-md-7 order-lg-1 content-column">
+          <p class="lead-text">
+            <strong>Abderrahim Bahraoui</strong> is a computer science student
+            at Epitech Paris and EMSI. He specializes in software development, C
+            and Python programming, web integration, and IT project
+            coordination.
+          </p>
 
-          <article>
-            <h1>Abderrahim Bahraoui</h1>
-            <p class="article-meta">
-              Computer science student · Epitech Paris · 2026
+          <nav
+            class="table-of-contents border bg-light d-inline-block p-3 mb-4 mt-2"
+            style="min-width: 260px"
+          >
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <strong class="small fw-bold">Contents</strong>
+              <span class="text-primary small" style="cursor: pointer"
+                >hide</span
+              >
+            </div>
+            <ol class="mb-0 ps-3 small">
+              <li><a href="#about">About</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li>
+                <a href="#projects">Projects</a>
+                <ol class="ps-3 mb-0 mt-1">
+                  <li><a href="#proj-portfolio">4.1 Wikipedia Portfolio</a></li>
+                  <li><a href="#proj-systems">4.2 Systems & C</a></li>
+                </ol>
+              </li>
+              <li><a href="#learning">Learning / Progress</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#references">References</a></li>
+            </ol>
+          </nav>
+
+          <section id="about" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">About</h2>
+            <p>
+              I am a computer science student currently studying at EMSI and
+              spending a semester at Epitech Paris in the Discover IT Programme.
+              I am passionate about understanding how software and operating
+              systems function under the hood, with a focus on systems
+              architecture and web development.
+            </p>
+            <p>
+              I enjoy learning by building real projects, experimenting with new
+              software tools, and solving complex problems step by step.
+            </p>
+          </section>
+
+          <section id="education" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Education</h2>
+            <p class="mb-1">
+              <strong>Epitech Paris (2026)</strong> — Discover IT Programme /
+              Web Integration
+            </p>
+            <p class="mb-1">
+              <strong>EMSI Tanger (2024 – 2026)</strong> — Cycle Préparatoire en
+              Génie Informatique
+            </p>
+          </section>
+
+          <section id="skills" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Skills</h2>
+            <p class="mb-1">
+              <strong>Programming:</strong> C, Python, JavaScript, HTML5, CSS3
+            </p>
+            <p class="mb-1">
+              <strong>Frameworks & Tools:</strong> Bootstrap 5, Git, GitHub
+              Pages, VS Code, Linux
+            </p>
+            <p class="mb-1">
+              <strong>Relevant Coursework:</strong> Algorithms, Data Structures,
+              Relational Databases (SQL), Web Accessibility
+            </p>
+          </section>
+
+          <section id="experience" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Experience</h2>
+
+            <div class="experience-item mb-3">
+              <p class="mb-1">
+                <strong>Event & Logistics Coordinator</strong>, Traiteur Zohour
+                <span class="text-muted small">(2023–2026)</span>
+              </p>
+              <ul class="mb-0">
+                <li>
+                  Managed large-scale event logistics and client coordination
+                </li>
+                <li>
+                  Coordinated high-profile roundtables with international guests
+                </li>
+              </ul>
+            </div>
+
+            <div class="experience-item mb-3">
+              <p class="mb-1">
+                <strong>Management Support</strong>, Family Auto Parts Business
+                <span class="text-muted small">(2022–2023)</span>
+              </p>
+              <ul class="mb-0">
+                <li>
+                  Assisted in inventory management and business administration
+                </li>
+                <li>
+                  Cultivated key client relationships across local markets
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="projects" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Projects</h2>
+
+            <div id="proj-portfolio" class="mb-3 mt-3">
+              <h3>4.1 Wikipedia-Style Portfolio</h3>
+              <p>
+                A responsive, accessible personal portfolio website built with
+                HTML5, CSS3, and Bootstrap 5, designed around Wikipedia's
+                classic Vector interface.
+              </p>
+            </div>
+
+            <div id="proj-systems" class="mb-3">
+              <h3>4.2 Systems & C Programming Experiments</h3>
+              <p>
+                Low-level programming exercises focusing on file I/O operations,
+                memory allocation, and recursive algorithms in C.
+              </p>
+            </div>
+          </section>
+
+          <section id="learning" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Learning / Progress</h2>
+            <p>
+              Tracking technical growth, ongoing projects, and key milestones
+              during my academic journey at Epitech Paris and EMSI.
+            </p>
+          </section>
+
+          <section id="contact" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Contact</h2>
+            <p class="text-muted small">
+              Have a question or want to get in touch? Send me a message.
             </p>
 
-            <div class="article-layout row">
-              <!-- Left Column -->
-              <div class="article-content col-lg-8 col-md-7">
-                <p>
-                  Abderrahim Bahraoui is a computer science student interested
-                  in software development, cybersecurity, systems and
-                  technology.
-                </p>
-
-                <nav class="table-of-contents">
-                  <h2>Contents</h2>
-                  <ol>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#learning">Learning / Progress</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                  </ol>
-                </nav>
-
-                <section id="about">
-                  <h2>About</h2>
-                  <p>
-                    I am a computer science student currently studying at EMSI
-                    and spending a semester at Epitech Paris. I am interested in
-                    understanding how software and computer systems work, with a
-                    growing focus on cybersecurity and systems programming.
-                  </p>
-                  <p>
-                    I enjoy learning by building projects, experimenting with
-                    technologies, and solving problems rather than only studying
-                    theory.
-                  </p>
-                </section>
-
-                <section id="projects">
-                  <h2>Projects</h2>
-                  <p>
-                    My projects are focused on learning through practice and
-                    applying programming concepts to real problems.
-                  </p>
-                  <h3>Projects and experiments</h3>
-                  <ul>
-                    <li>Software development projects</li>
-                    <li>Cybersecurity and systems experiments</li>
-                    <li>Web development projects</li>
-                  </ul>
-                </section>
-
-                <section id="skills">
-                  <h2>Skills</h2>
-                  <ul>
-                    <li>
-                      <strong>Languages:</strong> C, Python, HTML/CSS,
-                      JavaScript
-                    </li>
-                    <li>
-                      <strong>Systems & Tools:</strong> Linux, Git, VS Code
-                    </li>
-                    <li>
-                      <strong>Concepts:</strong> Data Structures, Algorithms,
-                      Web Development
-                    </li>
-                  </ul>
-                </section>
-
-                <section id="education">
-                  <h2>Education</h2>
-                  <ul>
-                    <li>
-                      <strong>Epitech Paris (2026)</strong> — Web Development
-                      Bootcamp / Discover IT Programme
-                    </li>
-                    <li>
-                      <strong>EMSI Tanger</strong> — Cycle Préparatoire en Génie
-                      Informatique
-                    </li>
-                  </ul>
-                </section>
-
-                <section id="experience">
-                  <h2>Experience</h2>
-                  <ul>
-                    <li>
-                      <strong>Academic Projects:</strong> Personal portfolio,
-                      web applications, system tools
-                    </li>
-                    <li>
-                      <strong>Extracurricular:</strong> Scouts, Enactus, event
-                      coordination
-                    </li>
-                  </ul>
-                </section>
-
-                <section id="learning">
-                  <h2>Learning / Progress</h2>
-                  <p>
-                    Tracking my technical growth, ongoing projects, and
-                    milestones during my studies at Epitech.
-                  </p>
-                </section>
-
-                <section id="contact">
-                  <h2>Contact</h2>
-                  <form>
-                    <div class="mb-2">
-                      <label for="name" class="form-label">Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="form-control form-control-sm"
-                      />
-                    </div>
-                    <div class="mb-2">
-                      <label for="email" class="form-label">Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-control form-control-sm"
-                      />
-                    </div>
-                    <div class="mb-2">
-                      <label for="message" class="form-label">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        class="form-control form-control-sm"
-                        rows="3"
-                      ></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-sm">
-                      Send
-                    </button>
-                  </form>
-                </section>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
               </div>
 
-              <!-- Infobox (Right Column) -->
-              <aside class="infobox col-lg-4 col-md-5 ms-auto">
-                <h2>Abderrahim Bahraoui</h2>
-                <p class="infobox-subtitle">Computer Science Student</p>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
 
-                <div class="infobox-image">
-                  <img
-                    src="https://placehold.co/260x180"
-                    alt="Photo de profil"
-                  />
-                </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
 
-                <div class="infobox-section">
-                  <strong>Education</strong>
-                  <p>EMSI · Epitech Paris</p>
-                </div>
-                <div class="infobox-section">
-                  <strong>Focus</strong>
-                  <p>Software Development · Cybersecurity</p>
-                </div>
-                <div class="infobox-section">
-                  <strong>Languages</strong>
-                  <p>Arabic · French · English</p>
-                </div>
-                <div class="infobox-section">
-                  <strong>Based in</strong>
-                  <p>France</p>
-                </div>
+              <button type="submit" class="btn btn-primary">Send</button>
 
-                <div class="infobox-quicklinks">
-                  <h3>Quick links</h3>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://github.com/Abduu898"
-                        target="_blank"
-                        rel="noopener"
-                        >GitHub</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-                    </li>
-                    <li>
-                      <a href="mailto:bahraoui.abdrrahim@gmail.com">Email</a>
-                    </li>
-                    <li><a href="assets/cv.pdf" download>Download CV</a></li>
-                  </ul>
-                </div>
+              <div id="formFeedback" class="mt-2 small"></div>
+            </form>
+          </section>
 
-                <p class="infobox-quote">
-                  “From Wikipedia, the free encyclopedia”
-                </p>
-              </aside>
+          <section id="references" class="mb-4 mt-5">
+            <h2 class="font-serif border-bottom pb-1">References</h2>
+            <div class="row small mt-3">
+              <div class="col-md-6">
+                <ol class="ps-3 mb-0" style="line-height: 1.6">
+                  <li id="cite_note-1">
+                    Personal portfolio and biography.
+                    <a href="#">bahraoui.vercel.app</a>. Retrieved 8 October
+                    2026.
+                  </li>
+                  <li id="cite_note-2">
+                    LinkedIn profile.
+                    <a href="#">linkedin.com/in/abderrahimbahraoui</a>.
+                    Retrieved 8 October 2026.
+                  </li>
+                  <li id="cite_note-3">
+                    GitHub profile and repositories.
+                    <a href="https://github.com/Abduu898">github.com/Abduu898</a
+                    >. Retrieved 8 October 2026.
+                  </li>
+                </ol>
+              </div>
+              <div class="col-md-6">
+                <ol class="ps-3 mb-0" start="4" style="line-height: 1.6">
+                  <li id="cite_note-4">
+                    Epitech Discover IT Programme. <a href="#">epitech.eu</a>.
+                    Retrieved 8 October 2026.
+                  </li>
+                  <li id="cite_note-5">
+                    EMSI Tanger portal. <a href="#">emsi.ma</a>. Retrieved 8
+                    October 2026.
+                  </li>
+                </ol>
+              </div>
             </div>
-          </article>
-        </main>
-      </div>
+          </section>
+
+          <section id="why-wiki" class="mb-4 mt-5">
+            <h2 class="font-serif border-bottom pb-1">
+              Why Wiki for this Portfolio?
+            </h2>
+            <div class="border p-3 bg-white mt-3 wiki-rationale-box">
+              <p class="mb-3 fw-bold text-dark">
+                One goal: what would be the most effective structure for a
+                recruiter to parse and understand my background and skills?
+              </p>
+              <p class="mb-0 text-dark">
+                Wikipedia is perhaps the <strong>MOST</strong> easily recognized
+                interface on the internet - it has iterated through hundreds of
+                designs to create the perfect balance of information density and
+                readability, and using it presents my information in a manner
+                any persons mind is instantly familiar too. I'm sacrificing
+                animations and floating stars for a nearly instant recognition
+                in the readers mind.
+              </p>
+            </div>
+          </section>
+
+          <div
+            class="categories-bar border-top border-bottom py-2 mt-5 mb-4 small"
+          >
+            <strong class="text-dark">Categories:</strong>
+            <a href="#" class="ms-1">Computer science students</a> |
+            <a href="#" class="ms-1">C programmers</a> |
+            <a href="#" class="ms-1">Python developers</a> |
+            <a href="#" class="ms-1">Web developers</a> |
+            <a href="#" class="ms-1">Open-source software developers</a>
+          </div>
+        </div>
+      </article>
     </div>
-    <footer class="border-top py-3 bg-light text-center text-muted fs-7 mt-4">
-      <ul class="list-inline mb-1">
-        <li class="list-inline-item">
-          <a href="#" class="text-decoration-none text-muted">Privacy policy</a>
-        </li>
-        <li class="list-inline-item">·</li>
-        <li class="list-inline-item">
-          <a href="#about" class="text-decoration-none text-muted">About</a>
-        </li>
-        <li class="list-inline-item">·</li>
-        <li class="list-inline-item">
-          <a href="#contact" class="text-decoration-none text-muted">Contact</a>
-        </li>
-      </ul>
-      <div>
-        <span>Last updated: 2026</span>
-      </div>
+
+    <footer
+      class="border-top py-4 mt-2 text-muted small"
+      style="
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      "
+    >
+      <p class="mb-0">
+        This page was last edited on 8 October 2026, at 10:25 (CEST).
+      </p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

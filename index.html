@@ -16,10 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header
-      class="navbar navbar-expand-lg bg-white sticky-top border-bottom"
-      style="min-height: 56px; padding: 0.5rem 1.25rem"
-    >
+    <header class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
       <div
         class="container-fluid p-0 d-flex align-items-center justify-content-between"
       >
@@ -31,7 +28,6 @@
               id="tocDropdown"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              style="outline: none; box-shadow: none"
             >
               <i class="bi bi-list"></i>
             </button>
@@ -76,14 +72,8 @@
               class="object-fit-contain"
             />
             <div class="d-flex flex-column lh-1 mt-1">
-              <span
-                class="font-serif fw-bold"
-                style="font-size: 1.25rem; letter-spacing: -0.02em"
-                >Wikipedia</span
-              >
-              <span
-                class="text-dark"
-                style="font-size: 0.75rem; font-family: sans-serif"
+              <span class="font-serif fw-bold nav-logo-title">Wikipedia</span>
+              <span class="text-dark nav-logo-subtitle"
                 >The Free Encyclopedia</span
               >
             </div>
@@ -91,15 +81,9 @@
         </div>
 
         <div class="d-none d-md-flex flex-grow-1 justify-content-center mx-4">
-          <div class="position-relative w-100" style="max-width: 500px">
+          <div class="position-relative w-100 search-wrapper">
             <i
-              class="bi bi-search position-absolute text-secondary"
-              style="
-                top: 50%;
-                left: 12px;
-                transform: translateY(-50%);
-                font-size: 0.85rem;
-              "
+              class="bi bi-search position-absolute text-secondary search-icon"
             ></i>
             <input
               type="text"
@@ -113,8 +97,7 @@
           <button
             id="themeToggle"
             type="button"
-            class="btn btn-link text-dark p-0 border-0 d-flex align-items-center gap-1"
-            style="text-decoration: none"
+            class="btn btn-link text-dark p-0 border-0 d-flex align-items-center gap-1 theme-toggle-btn"
           >
             <i class="bi bi-moon-fill" style="font-size: 0.8rem"></i>
             <span>Appearance</span>
@@ -127,10 +110,7 @@
       </div>
     </header>
 
-    <div
-      class="container-fluid py-4"
-      style="max-width: 1400px; padding-left: 2rem; padding-right: 2rem"
-    >
+    <div class="container-fluid py-4 main-container">
       <h1 class="firstHeading font-serif mb-1">Abderrahim Bahraoui</h1>
       <div class="text-muted small mb-0">
         From Wikipedia, the free encyclopedia
@@ -164,10 +144,9 @@
                 src="assets/photo.jpg"
                 alt="Abderrahim Bahraoui"
                 class="img-fluid border"
-                style="max-height: 250px; object-fit: cover"
                 onerror="this.src = 'https://placehold.co/260x180'"
               />
-              <div class="text-muted mt-1 pt-1" style="font-size: 0.8rem">
+              <div class="text-muted mt-1 pt-1 infobox-image-caption">
                 Abderrahim Bahraoui, 2026
               </div>
             </div>
@@ -235,13 +214,10 @@
 
           <nav
             class="table-of-contents border bg-light d-inline-block p-3 mb-4 mt-2"
-            style="min-width: 260px"
           >
             <div class="d-flex justify-content-between align-items-center mb-2">
               <strong class="small fw-bold">Contents</strong>
-              <span class="text-primary small" style="cursor: pointer"
-                >hide</span
-              >
+              <span class="text-primary small toc-hide">hide</span>
             </div>
             <ol class="mb-0 ps-3 small">
               <li><a href="#about">About</a></li>
@@ -416,7 +392,7 @@
             <h2 class="font-serif border-bottom pb-1">References</h2>
             <div class="row small mt-3">
               <div class="col-md-6">
-                <ol class="ps-3 mb-0" style="line-height: 1.6">
+                <ol class="ps-3 mb-0 references-list">
                   <li id="cite_note-1">
                     Personal portfolio and biography.
                     <a href="#">bahraoui.vercel.app</a>. Retrieved 8 October
@@ -435,7 +411,7 @@
                 </ol>
               </div>
               <div class="col-md-6">
-                <ol class="ps-3 mb-0" start="4" style="line-height: 1.6">
+                <ol class="ps-3 mb-0 references-list" start="4">
                   <li id="cite_note-4">
                     Epitech Discover IT Programme. <a href="#">epitech.eu</a>.
                     Retrieved 8 October 2026.
@@ -484,15 +460,7 @@
       </article>
     </div>
 
-    <footer
-      class="border-top py-4 mt-2 text-muted small"
-      style="
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-left: 2rem;
-        padding-right: 2rem;
-      "
-    >
+    <footer class="border-top py-4 mt-2 text-muted small footer-inner">
       <p class="mb-0">
         This page was last edited on 8 October 2026, at 10:25 (CEST).
       </p>

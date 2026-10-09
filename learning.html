@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning &amp; Skills Progression | Abderrahim Bahraoui</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+      <div
+        class="container-fluid p-0 d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="text-decoration-none text-dark nav-branding-wrapper"
+          aria-label="Back to Abderrahim Bahraoui's portfolio"
+        >
+          <div id="nav-logo" class="align-items-center nav-visible">
+            <img
+              src="assets/wikipedia-wordmark-en-25.svg"
+              alt="Wikipedia wordmark"
+              height="23"
+              class="object-fit-contain"
+            />
+          </div>
+          <div id="nav-title" class="align-items-center nav-hidden">
+            <span class="fw-bold text-dark">Abderrahim Bahraoui</span>
+          </div>
+        </a>
+        <div class="d-flex align-items-center gap-3 wiki-nav-actions">
+          <a href="index.html#contact">Contact</a>
+          <button
+            id="themeToggle"
+            type="button"
+            class="btn btn-link text-dark p-0 border-0 d-flex align-items-center gap-1 theme-toggle-btn"
+            aria-label="Toggle dark mode"
+          >
+            <i id="themeIcon" class="bi bi-moon-fill" aria-hidden="true"></i>
+            <span class="d-none d-sm-inline">Appearance</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid py-3 px-4 wiki-layout-wrapper">
+      <h1 class="firstHeading font-serif mb-1">
+        Learning &amp; Skills Progression
+      </h1>
+      <div class="text-muted small mb-0">
+        Abderrahim Bahraoui · Learning record
+      </div>
+
+      <div class="wiki-tabs-wrapper">
+        <div class="d-flex">
+          <div class="wiki-tab">
+            <a href="index.html">&larr; Back to Main Portfolio</a>
+          </div>
+          <div class="wiki-tab active">Article</div>
+        </div>
+      </div>
+
+      <div class="wiki-flow-container mt-2">
+        <aside class="infobox border p-2 bg-light text-center small mb-3">
+          <div class="infobox-header fw-bold p-1 mb-2">Progress Snapshot</div>
+          <table
+            class="table table-sm table-borderless text-start align-middle mb-0 infobox-table"
+          >
+            <tbody>
+              <tr class="border-top">
+                <th scope="row">Milestones</th>
+                <td>EMSI studies; Epitech Paris exchange</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Current focus</th>
+                <td>C, Python, Unix, cybersecurity</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Core technologies</th>
+                <td>C, Python, HTML, CSS, JavaScript</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Learning style</th>
+                <td>Build, test, debug, iterate</td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+
+        <main class="content-body">
+          <section id="background" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Background &amp; Timeline
+            </h2>
+            <p>
+              My computer science studies began at EMSI Tanger, where I built a
+              foundation in computer engineering. I am continuing that path
+              through the Discover IT exchange programme at Epitech Paris.
+            </p>
+            <ol>
+              <li>
+                <strong>EMSI Tanger:</strong> Preparatory Cycle in Computer
+                Engineering.
+              </li>
+              <li>
+                <strong>Epitech Paris:</strong> Discover IT academic exchange,
+                2026–2027.
+              </li>
+            </ol>
+            <p>
+              Moving between structured coursework and project-based practice
+              has helped me connect concepts to working software and hardware.
+            </p>
+          </section>
+
+          <section id="technical-progression" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Technical Progression</h2>
+            <p>
+              In C, I am developing a stronger understanding of data structures,
+              file operations, pointers, and memory management. Unix exercises
+              have introduced me to processes, pipes, redirection, and the way
+              small system tools fit together.
+            </p>
+            <p>
+              On the web side, I have moved from individual pages toward a more
+              structured site: semantic HTML, responsive CSS, Bootstrap
+              components, and JavaScript interactions such as theme switching
+              and search. Building the portfolio has made accessibility,
+              navigation, and relative paths part of the implementation rather
+              than afterthoughts.
+            </p>
+          </section>
+
+          <section id="challenges" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Challenges &amp; Failures
+            </h2>
+            <p>
+              A recurring challenge is separating a visual symptom from the rule
+              that caused it. While building this site, the Talk menu opened
+              partly off-screen on smaller layouts. I traced it to a CSS
+              selector that assumed the dropdown was the first tab, then
+              corrected the alignment and limited its width on narrow screens.
+            </p>
+            <p>
+              I also found that the contact form originally showed a success
+              message without actually sending anything. The form now validates
+              the fields and opens a prefilled email draft, so its feedback
+              describes what really happens. These fixes reinforced a useful
+              routine: reproduce the behavior, inspect the markup and styles,
+              make one focused change, and verify the result.
+            </p>
+          </section>
+
+          <section id="future-goals" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">Future Learning Goals</h2>
+            <ul>
+              <li>
+                Build deeper confidence with C, memory safety, and systems
+                programming.
+              </li>
+              <li>
+                Use Python for automation, small tools, and problem solving.
+              </li>
+              <li>
+                Continue practical cybersecurity study with a defensive focus.
+              </li>
+              <li>
+                Publish more complete projects with clear documentation and
+                reproducible steps.
+              </li>
+            </ul>
+          </section>
+        </main>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <footer class="border-top py-4 mt-2 text-muted small footer-inner">
+      <p class="mb-0"><a href="index.html">Return to the main portfolio</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

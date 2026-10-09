@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encyclopedia-Inspired Portfolio | Abderrahim Bahraoui</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+      <div
+        class="container-fluid p-0 d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="../index.html"
+          class="text-decoration-none text-dark nav-branding-wrapper"
+          aria-label="Back to Abderrahim Bahraoui's portfolio"
+        >
+          <div id="nav-logo" class="align-items-center nav-visible">
+            <img
+              src="../assets/wikipedia-wordmark-en-25.svg"
+              alt="Wikipedia wordmark"
+              height="23"
+              class="object-fit-contain"
+            />
+          </div>
+          <div id="nav-title" class="align-items-center nav-hidden">
+            <span class="fw-bold text-dark">Abderrahim Bahraoui</span>
+          </div>
+        </a>
+        <div class="d-flex align-items-center gap-3 wiki-nav-actions">
+          <a href="../index.html#contact">Contact</a>
+          <button
+            id="themeToggle"
+            type="button"
+            class="btn btn-link text-dark p-0 border-0 d-flex align-items-center gap-1 theme-toggle-btn"
+            aria-label="Toggle dark mode"
+          >
+            <i id="themeIcon" class="bi bi-moon-fill" aria-hidden="true"></i>
+            <span class="d-none d-sm-inline">Appearance</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid py-3 px-4 wiki-layout-wrapper">
+      <h1 class="firstHeading font-serif mb-1">
+        4.1 Encyclopedia-Inspired Portfolio
+      </h1>
+      <div class="text-muted small mb-0">
+        Web development · Responsive interface
+      </div>
+      <div class="wiki-tabs-wrapper">
+        <div class="d-flex">
+          <div class="wiki-tab">
+            <a href="../index.html">&larr; Back to Main Portfolio</a>
+          </div>
+          <div class="wiki-tab active">Article</div>
+        </div>
+        <div class="d-flex ms-auto">
+          <div class="wiki-tab">
+            <a
+              href="https://github.com/Abduu898/portfolio"
+              target="_blank"
+              rel="noopener"
+              >View source</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="wiki-flow-container mt-2">
+        <aside class="infobox border p-2 bg-light text-center small mb-3">
+          <div class="infobox-header fw-bold p-1 mb-2">Project Summary</div>
+          <table
+            class="table table-sm table-borderless text-start align-middle mb-0 infobox-table"
+          >
+            <tbody>
+              <tr class="border-top">
+                <th scope="row">Category</th>
+                <td>Personal portfolio</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Technologies</th>
+                <td>HTML, CSS, JavaScript, Bootstrap</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Status</th>
+                <td>In progress</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Date</th>
+                <td>Current iteration, 2026</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Source</th>
+                <td>
+                  <a
+                    href="https://github.com/Abduu898/portfolio"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub repository</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+
+        <main class="content-body">
+          <section id="context" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Context &amp; Objective
+            </h2>
+            <p>
+              This site presents my education, skills, experience, and projects
+              in a familiar encyclopedia-inspired format. The goal is to make
+              information easy to scan while keeping project details and
+              learning reflections available as separate pages.
+            </p>
+          </section>
+          <section id="architecture" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Architecture &amp; Technologies
+            </h2>
+            <p>
+              The site uses semantic HTML pages, a shared stylesheet, and a
+              shared JavaScript file. Bootstrap provides responsive layout and
+              common interface components; custom CSS supplies the Vector-like
+              tabs, infoboxes, responsive rules, and dark theme.
+            </p>
+          </section>
+          <section id="challenges" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Challenges &amp; Key Learnings
+            </h2>
+            <p>
+              One challenge has been making an information-dense layout work on
+              narrow screens. I have had to check dropdown positioning, content
+              order, and text wrapping at mobile sizes. The multi-page refactor
+              also makes relative asset paths and consistent shared navigation
+              important across directories.
+            </p>
+          </section>
+          <section id="links" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Links &amp; Documentation
+            </h2>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/Abduu898/portfolio"
+                  target="_blank"
+                  rel="noopener"
+                  >Portfolio source on GitHub</a
+                >
+              </li>
+              <li><a href="../index.html">Main portfolio hub</a></li>
+              <li>
+                <a href="../learning.html"
+                  >Learning and progression reflection</a
+                >
+              </li>
+            </ul>
+          </section>
+        </main>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <footer class="border-top py-4 mt-2 text-muted small footer-inner">
+      <p class="mb-0"><a href="../index.html">Back to the main portfolio</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

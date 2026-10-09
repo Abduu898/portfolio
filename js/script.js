@@ -64,19 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
+      const emailField = document.getElementById("email");
+      const email = emailField.value.trim();
       const message = document.getElementById("message").value.trim();
 
-      if (!name || !email || !message) {
-        feedback.textContent = "Please fill in all fields.";
+      if (!name || !email || !message || !emailField.validity.valid) {
+        feedback.textContent = "Please complete all fields with a valid email.";
         feedback.style.color = "red";
+        form.reportValidity();
         return;
       }
 
-      feedback.textContent =
-        "Thanks, " + name + "! Your message has been received.";
+      const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+      const body = encodeURIComponent(
+        `${message}\n\nName: ${name}\nEmail: ${email}`,
+      );
+
+      feedback.textContent = "Opening your email app to send this message.";
       feedback.style.color = "green";
-      form.reset();
+      window.location.href = `mailto:bahraoui.abdrrahim@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 

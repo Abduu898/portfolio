@@ -166,7 +166,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   3. RECTANGULAR VECTOR TABS
+   3. RECTANGULAR VECTOR TABS & TALK DROPDOWN
    ========================================================================== */
 
 .wiki-tabs-wrapper {
@@ -200,6 +200,33 @@ a:hover {
 
 .wiki-tab:not(.active) a:hover {
   text-decoration: underline;
+}
+
+/* Talk Popup Menu */
+.talk-dropdown-menu {
+  min-width: 160px;
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1 !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.wiki-talk-link {
+  color: #3366cc !important;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.4rem !important;
+  background: transparent !important;
+  line-height: 1.4;
+}
+
+.wiki-talk-link:hover {
+  text-decoration: underline !important;
+  background-color: #f0f4f8 !important;
+}
+
+.dropdown-toggle-no-caret::after {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -443,6 +470,8 @@ a:hover {
 }
 
 .wiki-rationale-box {
+  background-color: #ffffff;
+  color: #202122;
   border-color: #a2a9b1 !important;
   font-size: 0.875rem;
   line-height: 1.65;
@@ -498,10 +527,15 @@ html {
 }
 
 /* ==========================================================================
-   11. MOBILE RESPONSIVENESS
+   11. MOBILE RESPONSIVENESS & MEDIA QUERIES
    ========================================================================== */
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
+  .wiki-layout-wrapper {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
   .table-of-contents.toc-sidebar,
   .infobox {
     float: none !important;
@@ -509,6 +543,50 @@ html {
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .infobox-table th {
+    width: 35%;
+  }
+
+  .wiki-tabs-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wiki-tab {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .contact-form {
+    max-width: 100% !important;
+  }
+
+  .contact-form label {
+    text-align: left !important;
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1.firstHeading {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .nav-branding-wrapper {
+    min-width: 120px;
+  }
+
+  .footer-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -530,6 +608,10 @@ body.dark h2,
 body.dark h3,
 body.dark p {
   color: #eaecf0;
+}
+
+body.dark .wiki-layout-wrapper > .text-muted {
+  color: #eaecf0 !important;
 }
 
 body.dark #nav-title span {
@@ -580,12 +662,31 @@ body.dark .wiki-tab.active {
   color: #eaecf0;
 }
 
+body.dark .talk-dropdown-menu {
+  background-color: #1c2026 !important;
+  border-color: #3a4048 !important;
+}
+
+body.dark .wiki-talk-link {
+  color: #6e9eff !important;
+}
+
+body.dark .wiki-talk-link:hover {
+  background-color: #272d35 !important;
+}
+
 body.dark .infobox,
-body.dark .table-of-contents,
-body.dark .wiki-rationale-box {
+body.dark .table-of-contents {
   background-color: #1c2026 !important;
   border-color: #3a4048 !important;
   color: #eaecf0;
+}
+
+body.dark .wiki-rationale-box,
+body.dark .wiki-rationale-box p {
+  background-color: #1c2026 !important;
+  color: #eaecf0 !important;
+  border-color: #3a4048 !important;
 }
 
 body.dark .infobox-header {
@@ -640,47 +741,24 @@ body.dark footer {
   color: #a2a9b1 !important;
   border-color: #3a4048 !important;
 }
-/* ==========================================================================
-   TALK TAB DROPDOWN (Vector Popup Menu)
-   ========================================================================== */
-
-.talk-dropdown-menu {
-  min-width: 160px;
-  background-color: #f8f9fa;
-  border: 1px solid #a2a9b1 !important;
-  border-radius: 0 !important;
-  padding: 0.5rem 0.75rem !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+/* Correction pour : "From Wikipedia, the free encyclopedia" */
+body.dark .main-container > .text-muted,
+body.dark .wiki-layout-wrapper > .text-muted {
+  color: #a2a9b1 !important;
 }
 
-.wiki-talk-link {
-  color: #3366cc !important;
-  font-size: 0.9rem;
-  padding: 0.35rem 0.4rem !important;
-  background: transparent !important;
-  line-height: 1.4;
+/* Correction pour le formulaire de contact : "You can send an email..." et labels */
+body.dark #contact p.text-muted,
+body.dark #contact label {
+  color: #eaecf0 !important;
 }
 
-.wiki-talk-link:hover {
-  text-decoration: underline !important;
-  background-color: #f0f4f8 !important;
+/* Correction pour le bloc Categories : "Categories:" et la liste de références */
+body.dark .categories-bar strong {
+  color: #eaecf0 !important;
 }
 
-/* Remove default Bootstrap dropdown arrow caret */
-.dropdown-toggle-no-caret::after {
-  display: none !important;
-}
-
-/* Dark Mode Support for Talk Dropdown */
-body.dark .talk-dropdown-menu {
-  background-color: #1c2026 !important;
-  border-color: #3a4048 !important;
-}
-
-body.dark .wiki-talk-link {
-  color: #6e9eff !important;
-}
-
-body.dark .wiki-talk-link:hover {
-  background-color: #272d35 !important;
+body.dark #references li,
+body.dark #references .text-muted {
+  color: #eaecf0 !important;
 }

@@ -78,7 +78,7 @@ a:hover {
 
 .nav-branding-wrapper {
   position: relative;
-  min-width: 220px;
+  min-width: 140px; /* Prevents header overflow on small viewports */
   min-height: 42px;
   display: flex;
   align-items: center;
@@ -128,10 +128,27 @@ a:hover {
 }
 
 .search-icon {
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
   font-size: 0.8rem;
+}
+
+.search-submit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #54595d;
+}
+
+.search-submit:focus-visible {
+  outline: 2px solid #3366cc;
+  outline-offset: -2px;
 }
 
 .wiki-search {
@@ -166,23 +183,28 @@ a:hover {
 }
 
 /* ==========================================================================
-   3. RECTANGULAR VECTOR TABS & TALK DROPDOWN
+   3. RECTANGULAR VECTOR TABS & TALK / TOOLS DROPDOWNS
    ========================================================================== */
 
 .wiki-tabs-wrapper {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   border-top: 1px solid #a2a9b1;
   border-bottom: 1px solid #a2a9b1;
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
   font-size: 0.85rem;
+  width: 100%;
+  position: relative;
+  z-index: 100; /* Keeps bar layered above body content */
 }
 
 .wiki-tab {
-  padding: 0.3rem 0.75rem;
+  padding: 0.3rem 0.65rem;
   margin-bottom: -1px;
   position: relative;
+  white-space: nowrap;
 }
 
 .wiki-tab.active {
@@ -202,14 +224,28 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Talk Popup Menu */
+/* Talk & Tools Dropdown Menus */
 .talk-dropdown-menu {
-  min-width: 160px;
+  min-width: 180px;
   background-color: #f8f9fa;
   border: 1px solid #a2a9b1 !important;
   border-radius: 0 !important;
   padding: 0.5rem 0.75rem !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important; /* Opens dropdown inward on right-hand tabs */
+  left: auto !important;
+  z-index: 1050 !important; /* Float above infobox and article content */
+}
+
+/* Keep the Talk menu inside the viewport on the left-side tabs */
+.wiki-tabs-wrapper
+  > .d-flex:first-child
+  .wiki-tab.dropdown
+  .talk-dropdown-menu {
+  left: 0 !important;
+  right: auto !important;
 }
 
 .wiki-talk-link {
@@ -329,6 +365,8 @@ a:hover {
   background-color: #f8f9fa;
   font-size: 0.8125rem;
   border-radius: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .infobox-header {
@@ -520,10 +558,10 @@ html {
 }
 
 .dropdown-menu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
 }
 
 /* ==========================================================================
@@ -531,62 +569,144 @@ html {
    ========================================================================== */
 
 @media (max-width: 991.98px) {
-  .wiki-layout-wrapper {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  /* Lock horizontal scrolling on main viewport */
+  body,
+  html {
+    overflow-x: hidden;
   }
 
-  .table-of-contents.toc-sidebar,
+  .wiki-layout-wrapper {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Prevent overflow clipping so dropdown menus overlay content properly */
+  .wiki-tabs-wrapper {
+    overflow: visible !important;
+    flex-wrap: wrap;
+  }
+
+  .wiki-tab {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.8rem;
+  }
+
+  /* Reorder main elements vertically on mobile */
+  .wiki-flow-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* 1. Infobox at top on mobile */
   .infobox {
+    order: 1;
     float: none !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-bottom: 1.25rem !important;
+    box-sizing: border-box;
   }
 
   .infobox-table th {
     width: 35%;
   }
 
-  .wiki-tabs-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+  .infobox-image img {
+    max-height: 220px;
+    width: 100%;
+    object-fit: contain;
   }
 
-  .wiki-tab {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.8rem;
+  /* 2. Lead text below Infobox */
+  .lead-text {
+    order: 2;
+    width: 100%;
   }
 
+  /* 3. Table of Contents below Lead text */
+  .table-of-contents.toc-sidebar {
+    order: 3;
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 1.25rem !important;
+    box-sizing: border-box;
+  }
+
+  /* 4. Article body below TOC */
+  .content-body {
+    order: 4;
+    width: 100%;
+  }
+
+  /* Contact Form Mobile Layout */
   .contact-form {
     max-width: 100% !important;
+    width: 100%;
+  }
+
+  .contact-form .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .contact-form label {
     text-align: left !important;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
+    padding-left: 0;
+  }
+
+  .contact-form .col-sm-9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-form .offset-sm-3 {
+    margin-left: 0 !important;
   }
 }
 
 @media (max-width: 575.98px) {
   h1.firstHeading {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
-  .nav-branding-wrapper {
-    min-width: 120px;
+  .navbar {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .wiki-tabs-wrapper
+    > .d-flex:first-child
+    .wiki-tab.dropdown
+    .talk-dropdown-menu {
+    width: min(180px, calc(100vw - 1.5rem));
+    min-width: 0;
+    max-width: calc(100vw - 1.5rem);
   }
 
   .footer-inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  a,
+  li {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
@@ -610,7 +730,8 @@ body.dark p {
   color: #eaecf0;
 }
 
-body.dark .wiki-layout-wrapper > .text-muted {
+body.dark .wiki-layout-wrapper > .text-muted,
+body.dark .main-container > .text-muted {
   color: #eaecf0 !important;
 }
 
@@ -642,8 +763,8 @@ body.dark .navbar .text-muted {
   color: #a2a9b1 !important;
 }
 
-body.dark .navbar img[alt="Wikipedia Logo"] {
-  filter: invert(1) brightness(1.5);
+body.dark .navbar img[alt="Wikipedia wordmark"] {
+  filter: brightness(0) invert(1);
 }
 
 body.dark .wiki-search {
@@ -721,6 +842,11 @@ body.dark .contact-form {
   border-color: #3a4048 !important;
 }
 
+body.dark #contact p.text-muted,
+body.dark #contact label {
+  color: #eaecf0 !important;
+}
+
 body.dark .wiki-input {
   background-color: #101418 !important;
   color: #eaecf0 !important;
@@ -737,28 +863,22 @@ body.dark .wiki-btn:hover {
   background-color: #3a4048;
 }
 
-body.dark footer {
-  color: #a2a9b1 !important;
-  border-color: #3a4048 !important;
-}
-/* Correction pour : "From Wikipedia, the free encyclopedia" */
-body.dark .main-container > .text-muted,
-body.dark .wiki-layout-wrapper > .text-muted {
-  color: #a2a9b1 !important;
-}
-
-/* Correction pour le formulaire de contact : "You can send an email..." et labels */
-body.dark #contact p.text-muted,
-body.dark #contact label {
-  color: #eaecf0 !important;
-}
-
-/* Correction pour le bloc Categories : "Categories:" et la liste de références */
-body.dark .categories-bar strong {
+body.dark .categories-bar strong,
+body.dark .categories-title {
   color: #eaecf0 !important;
 }
 
 body.dark #references li,
 body.dark #references .text-muted {
   color: #eaecf0 !important;
+}
+
+body.dark footer {
+  color: #a2a9b1 !important;
+  border-color: #3a4048 !important;
+}
+
+/* Monospace Font Easter Egg Mode */
+body.mono-mode {
+  font-family: "Courier New", Courier, monospace !important;
 }

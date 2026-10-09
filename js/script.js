@@ -29,6 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const wikiSearchForm = document.getElementById("wikiSearchForm");
+  if (wikiSearchForm) {
+    wikiSearchForm.addEventListener("submit", (event) => {
+      const searchInput = document.getElementById("wikiSearchInput");
+      const query = searchInput.value.trim();
+
+      if (!query) {
+        event.preventDefault();
+        searchInput.focus();
+        return;
+      }
+
+      searchInput.value = query;
+    });
+  }
+
   const donateLink = document.getElementById("donateLink");
   if (donateLink) {
     donateLink.addEventListener("click", (event) => {
@@ -92,4 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+});
+document.getElementById("monoFontToggle")?.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.body.classList.toggle("mono-mode");
 });

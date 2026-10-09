@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abderrahim Bahraoui - Wikipedia</title>
+    <title>Abderrahim Bahraoui | Computer Science Portfolio</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -52,37 +52,36 @@
                   <a href="#projects">Projects</a>
                   <ol class="ps-3 my-1">
                     <li>
-                      <a href="#proj-portfolio">4.1 Wikipedia Portfolio</a>
+                      <a href="#proj-portfolio">4.1 Portfolio Website</a>
                     </li>
-                    <li><a href="#proj-systems">4.2 Systems & C</a></li>
+                    <li><a href="#proj-systems">4.2 C &amp; Systems</a></li>
+                    <li><a href="#proj-arduino">4.3 Arduino Elevator</a></li>
+                    <li>
+                      <a href="#proj-cybersecurity">4.4 Cybersecurity Labs</a>
+                    </li>
+                    <li><a href="#proj-digital">4.5 Digital Projects</a></li>
+                    <li><a href="#proj-enactus">4.6 Enactus Initiative</a></li>
                   </ol>
                 </li>
-                <li><a href="#learning">Learning / Progress</a></li>
+                <li><a href="#learning">Learning &amp; Development</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#references">References</a></li>
+                <li><a href="#references">Profiles &amp; Resources</a></li>
               </ol>
             </div>
           </div>
 
           <!-- Brand / Title -->
           <a
-            href="#about"
+            href="https://www.wikipedia.org/"
             class="text-decoration-none text-dark gap-2 nav-branding-wrapper"
           >
             <div id="nav-logo" class="align-items-center gap-2 nav-visible">
               <img
-                src="assets/logo.png"
-                alt="Wikipedia Logo"
-                height="42"
+                src="assets/wikipedia-wordmark-en-25.svg"
+                alt="Wikipedia wordmark"
+                height="23"
                 class="object-fit-contain"
-                onerror="this.src = 'https://placehold.co/40'"
               />
-              <div class="d-flex flex-column lh-1 mt-1 d-none d-sm-flex">
-                <span class="font-serif fw-bold nav-logo-title">Wikipedia</span>
-                <span class="text-dark nav-logo-subtitle"
-                  >The Free Encyclopedia</span
-                >
-              </div>
             </div>
 
             <div id="nav-title" class="align-items-center nav-hidden">
@@ -103,16 +102,31 @@
 
         <!-- Desktop Search Bar -->
         <div class="d-none d-md-flex flex-grow-1 justify-content-center mx-4">
-          <div class="position-relative w-100 search-wrapper">
-            <i
-              class="bi bi-search position-absolute text-secondary search-icon"
-            ></i>
+          <form
+            id="wikiSearchForm"
+            action="https://en.wikipedia.org/w/index.php"
+            method="get"
+            target="_blank"
+            rel="noopener"
+            class="position-relative w-100 search-wrapper"
+          >
+            <button
+              type="submit"
+              class="search-submit"
+              aria-label="Search Wikipedia"
+            >
+              <i class="bi bi-search search-icon" aria-hidden="true"></i>
+            </button>
             <input
-              type="text"
+              id="wikiSearchInput"
+              type="search"
+              name="search"
               class="form-control shadow-none wiki-search"
               placeholder="Search Wikipedia"
+              aria-label="Search Wikipedia"
+              required
             />
-          </div>
+          </form>
         </div>
 
         <!-- Actions & Mobile Theme Toggle -->
@@ -131,9 +145,19 @@
           </button>
 
           <span class="text-muted d-none d-lg-inline">|</span>
-          <a href="#" class="d-none d-lg-inline">Donate</a>
+          <a
+            href="mailto:bahraoui.abdrrahim@gmail.com"
+            class="d-none d-lg-inline"
+            >Contact</a
+          >
           <span class="text-muted d-none d-lg-inline">|</span>
-          <a href="#" class="d-none d-lg-inline">Create account</a>
+          <a
+            href="https://github.com/Abduu898"
+            target="_blank"
+            rel="noopener"
+            class="d-none d-lg-inline"
+            >GitHub</a
+          >
         </div>
       </div>
     </header>
@@ -143,15 +167,15 @@
       <!-- Page Title & Subtitle -->
       <h1 class="firstHeading font-serif mb-1">Abderrahim Bahraoui</h1>
       <div class="text-muted small mb-0">
-        From Wikipedia, the free encyclopedia
+        Computer Science · Software Development · Systems
       </div>
 
-      <!-- Article / History Tabs (With Talk Dropdown) -->
+      <!-- Article / History Tabs -->
       <div class="wiki-tabs-wrapper">
         <div class="d-flex">
           <div class="wiki-tab active">Article</div>
 
-          <!-- Talk Tab with Dropdown -->
+          <!-- Talk Tab Dropdown -->
           <div class="wiki-tab dropdown">
             <a
               href="#"
@@ -170,9 +194,6 @@
                 class="dropdown-item wiki-talk-link"
                 href="mailto:bahraoui.abdrrahim@gmail.com"
                 >Email</a
-              >
-              <a class="dropdown-item wiki-talk-link" href="tel:+33123456789"
-                >Phone number</a
               >
               <a
                 class="dropdown-item wiki-talk-link"
@@ -194,26 +215,102 @@
 
         <div class="d-flex ms-auto">
           <div class="wiki-tab active">Read</div>
-          <div class="wiki-tab"><a href="#">View source</a></div>
-          <div class="wiki-tab"><a href="#">View history</a></div>
-          <div class="wiki-tab"><a href="#">Tools</a></div>
+          <div class="wiki-tab">
+            <a
+              href="https://github.com/Abduu898/portfolio"
+              target="_blank"
+              rel="noopener"
+              >View source</a
+            >
+          </div>
+          <div class="wiki-tab">
+            <a
+              href="https://github.com/Abduu898/portfolio/commits/main"
+              target="_blank"
+              rel="noopener"
+              >View history</a
+            >
+          </div>
+
+          <!-- Tools Tab Dropdown -->
+          <div class="wiki-tab dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle-no-caret"
+              id="toolsDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Tools
+            </a>
+            <div
+              class="dropdown-menu talk-dropdown-menu shadow-sm py-2 px-3 mt-1"
+              aria-labelledby="toolsDropdown"
+            >
+              <a
+                class="dropdown-item wiki-talk-link"
+                href="assets/cv.pdf"
+                download
+                >Download Resume (PDF)</a
+              >
+              <a
+                class="dropdown-item wiki-talk-link"
+                href="#"
+                onclick="
+                  window.print();
+                  return false;
+                "
+                >Print Page</a
+              >
+              <a
+                class="dropdown-item wiki-talk-link"
+                href="#"
+                id="monoFontToggle"
+                >Toggle Mono Font</a
+              >
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Lead paragraph -->
-      <p class="lead-text">
-        <strong>Abderrahim Bahraoui</strong> is a computer science student at
-        Epitech Paris and EMSI. He specializes in software development, C and
-        Python programming, web integration, and IT project coordination.
-      </p>
-
-      <!-- Main Content Layout Area (Floated Elements) -->
+      <!-- Main Content Layout Area -->
       <div class="wiki-flow-container mt-2">
-        <!-- 1. RIGHT INFOBOX (Floated Right) -->
+        <!-- 0. LEAD PARAGRAPH -->
+        <p class="lead-text">
+          <strong>Abderrahim Bahraoui</strong> is a computer science student at
+          <a href="https://www.emsi.ma/" target="_blank" rel="noopener">EMSI</a
+          >, currently undertaking an academic exchange at
+          <a href="https://www.epitech.eu/" target="_blank" rel="noopener"
+            >Epitech Paris</a
+          >. His interests span
+          <a
+            href="https://en.wikipedia.org/wiki/Software_development"
+            target="_blank"
+            rel="noopener"
+            >software development</a
+          >,
+          <a
+            href="https://en.wikipedia.org/wiki/Systems_programming"
+            target="_blank"
+            rel="noopener"
+            >systems programming</a
+          >,
+          <a
+            href="https://en.wikipedia.org/wiki/Cybersecurity"
+            target="_blank"
+            rel="noopener"
+            >cybersecurity</a
+          >, and practical technology projects.
+        </p>
+
+        <!-- 1. RIGHT INFOBOX -->
         <aside class="infobox border p-2 bg-light text-center small mb-3">
           <div class="infobox-header fw-bold p-1 mb-2">Abderrahim Bahraoui</div>
           <div class="text-muted mb-2 font-serif">
-            <em>Computer Science Student</em>
+            <em
+              >Computer Science Student · Aspiring Systems &amp; Security
+              Practitioner</em
+            >
           </div>
 
           <div class="infobox-image mb-2">
@@ -234,7 +331,7 @@
             <tbody>
               <tr class="border-top">
                 <th scope="row">Location</th>
-                <td>Paris, France</td>
+                <td>France</td>
               </tr>
               <tr class="border-top">
                 <th scope="row">Education</th>
@@ -254,8 +351,11 @@
               <tr class="border-top">
                 <th scope="row">LinkedIn</th>
                 <td>
-                  <a href="#" target="_blank" rel="noopener"
-                    >LinkedIn Profile</a
+                  <a
+                    href="https://www.linkedin.com/in/abderrahimbahraoui"
+                    target="_blank"
+                    rel="noopener"
+                    >Abderrahim Bahraoui</a
                   >
                 </td>
               </tr>
@@ -274,13 +374,13 @@
               </tr>
               <tr class="border-top">
                 <th scope="row">Programming</th>
-                <td>C, Python, JavaScript, HTML5, CSS3</td>
+                <td>C, Python, JavaScript, HTML, CSS, SQL</td>
               </tr>
             </tbody>
           </table>
         </aside>
 
-        <!-- 2. LEFT TABLE OF CONTENTS (Floated Left) -->
+        <!-- 2. LEFT TABLE OF CONTENTS -->
         <nav class="table-of-contents border bg-light p-3 mb-3 toc-sidebar">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <strong class="small fw-bold">Contents</strong>
@@ -294,89 +394,121 @@
             <li>
               <a href="#projects">Projects</a>
               <ol class="ps-3 mb-0 mt-1">
-                <li><a href="#proj-portfolio">4.1 Wikipedia Portfolio</a></li>
-                <li><a href="#proj-systems">4.2 Systems & C</a></li>
+                <li><a href="#proj-portfolio">4.1 Portfolio Website</a></li>
+                <li><a href="#proj-systems">4.2 C &amp; Systems</a></li>
+                <li><a href="#proj-arduino">4.3 Arduino Elevator</a></li>
+                <li>
+                  <a href="#proj-cybersecurity">4.4 Cybersecurity Labs</a>
+                </li>
+                <li><a href="#proj-digital">4.5 Digital Projects</a></li>
+                <li><a href="#proj-enactus">4.6 Enactus Initiative</a></li>
               </ol>
             </li>
-            <li><a href="#learning">Learning / Progress</a></li>
+            <li><a href="#learning">Learning &amp; Development</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#references">References</a></li>
+            <li><a href="#references">Profiles &amp; Resources</a></li>
           </ol>
         </nav>
 
-        <!-- 3. ARTICLE CONTENT (Wraps around TOC & Infobox) -->
+        <!-- 3. ARTICLE CONTENT -->
         <main class="content-body">
           <section id="about" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">About</h2>
             <p>
-              I am a computer science student currently studying at EMSI and
-              spending a semester at Epitech Paris in the Discover IT Programme.
-              I am passionate about understanding how software and operating
-              systems function under the hood, with a focus on systems
-              architecture and web development.
+              I study computer science with a focus on
+              <a
+                href="https://en.wikipedia.org/wiki/Operating_system"
+                target="_blank"
+                rel="noopener"
+                >operating systems</a
+              >,
+              <a
+                href="https://en.wikipedia.org/wiki/C_(programming_language)"
+                target="_blank"
+                rel="noopener"
+                >C programming</a
+              >, and
+              <a
+                href="https://en.wikipedia.org/wiki/Relational_database"
+                target="_blank"
+                rel="noopener"
+                >relational databases</a
+              >.
             </p>
             <p>
-              I enjoy learning by building real projects, experimenting with new
-              software tools, and solving complex problems step by step.
+              My approach is hands-on: I learn by building, testing, debugging,
+              and improving projects. Alongside coursework, I have explored
+              digital content, e-commerce, hardware projects, and introductory
+              cybersecurity labs.
             </p>
           </section>
 
           <section id="education" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">Education</h2>
             <p class="mb-1">
-              <strong>Epitech Paris (2026)</strong> — Discover IT Programme /
-              Web Integration
+              <strong>Epitech Paris (2026–2027)</strong> — Discover IT (DIT)
+              academic exchange programme
             </p>
             <p class="mb-1">
-              <strong>EMSI Tanger (2024 – 2026)</strong> — Cycle Préparatoire en
-              Génie Informatique
+              <strong>EMSI Tanger</strong> — Preparatory Cycle in Computer
+              Engineering
             </p>
           </section>
 
           <section id="skills" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">Skills</h2>
             <p class="mb-1">
-              <strong>Programming:</strong> C, Python, JavaScript, HTML5, CSS3
+              <strong>Programming &amp; Web:</strong> C, Python, JavaScript,
+              HTML, CSS, SQL
             </p>
             <p class="mb-1">
-              <strong>Frameworks & Tools:</strong> Bootstrap 5, Git, GitHub
-              Pages, VS Code, Linux
+              <strong>Tools &amp; Environments:</strong> Git, GitHub, VS Code,
+              Linux/Unix command line, Bootstrap
             </p>
             <p class="mb-1">
-              <strong>Relevant Coursework:</strong> Algorithms, Data Structures,
-              Relational Databases (SQL), Web Accessibility
+              <strong>Foundations:</strong> Algorithms, data structures, file
+              handling, memory management, relational databases, and
+              introductory networking and security concepts
             </p>
           </section>
 
           <section id="experience" class="mb-4">
-            <h2 class="font-serif border-bottom pb-1">Experience</h2>
+            <h2 class="font-serif border-bottom pb-1">
+              Digital &amp; Business Experience
+            </h2>
 
             <div class="experience-item mb-3">
               <p class="mb-1">
-                <strong>Event & Logistics Coordinator</strong>, Traiteur Zohour
-                <span class="text-muted small">(2023–2026)</span>
+                <strong>Independent E-commerce &amp; Digital Projects</strong>
               </p>
               <ul class="mb-0">
                 <li>
-                  Managed large-scale event logistics and client coordination
+                  Built and managed online storefronts using Shopify and
+                  WordPress.
                 </li>
                 <li>
-                  Coordinated high-profile roundtables with international guests
+                  Worked on product-page structure, store presentation, and
+                  customer experience.
+                </li>
+                <li>
+                  Learned through practical experimentation with content,
+                  organic distribution, and online business operations.
                 </li>
               </ul>
             </div>
 
             <div class="experience-item mb-3">
               <p class="mb-1">
-                <strong>Management Support</strong>, Family Auto Parts Business
-                <span class="text-muted small">(2022–2023)</span>
+                <strong>Digital Content &amp; Audience Growth</strong>
               </p>
               <ul class="mb-0">
                 <li>
-                  Assisted in inventory management and business administration
+                  Contributed to social content projects that have accumulated
+                  more than 55 million views.
                 </li>
                 <li>
-                  Cultivated key client relationships across local markets
+                  Developed practical experience in short-form content planning,
+                  editing workflows, and audience engagement.
                 </li>
               </ul>
             </div>
@@ -386,37 +518,85 @@
             <h2 class="font-serif border-bottom pb-1">Projects</h2>
 
             <div id="proj-portfolio" class="mb-3 mt-3">
-              <h3>4.1 Wikipedia-Style Portfolio</h3>
+              <h3>4.1 Encyclopedia-Inspired Portfolio</h3>
               <p>
-                A responsive, accessible personal portfolio website built with
-                HTML5, CSS3, and Bootstrap 5, designed around Wikipedia's
-                classic Vector interface.
+                A responsive personal portfolio inspired by encyclopedia-style
+                information architecture. Built with HTML, CSS, JavaScript, and
+                Bootstrap, with an emphasis on readable structure, accessible
+                navigation, responsive design, and interactive features.
               </p>
             </div>
 
             <div id="proj-systems" class="mb-3">
-              <h3>4.2 Systems & C Programming Experiments</h3>
+              <h3>4.2 C Programming &amp; Systems Fundamentals</h3>
               <p>
-                Low-level programming exercises focusing on file I/O operations,
-                memory allocation, and recursive algorithms in C.
+                Coursework and programming exercises exploring data structures,
+                file operations, memory management, algorithms, and core Unix
+                concepts such as processes, pipes, and redirections.
+              </p>
+            </div>
+
+            <div id="proj-arduino" class="mb-3">
+              <h3>4.3 Arduino Elevator Prototype</h3>
+              <p>
+                A hands-on electronics project using an Arduino Uno and an I2C
+                LCD to prototype elevator behaviour. The project combines basic
+                hardware connections, control logic, and a simple display
+                interface.
+              </p>
+            </div>
+
+            <div id="proj-cybersecurity" class="mb-3">
+              <h3>4.4 Cybersecurity Labs</h3>
+              <p>
+                Beginner-level practical exercises covering web reconnaissance
+                and security fundamentals, including guided labs on platforms
+                such as TryHackMe. These exercises support an ongoing interest
+                in defensive security and how web systems can be tested.
+              </p>
+            </div>
+
+            <div id="proj-digital" class="mb-3">
+              <h3>4.5 Digital Products &amp; Content Projects</h3>
+              <p>
+                Practical work across e-commerce storefronts, website setup,
+                short-form content, and social media distribution. These
+                projects developed an understanding of digital presentation,
+                audience behaviour, and iterative improvement based on results.
+              </p>
+            </div>
+
+            <div id="proj-enactus" class="mb-3">
+              <h3>4.6 Enactus &amp; Collaborative Initiatives</h3>
+              <p>
+                Participation in student-led initiatives, including work around
+                FindNgo, a car-rental marketplace concept. This experience
+                introduced product thinking, teamwork, and the challenge of
+                turning an idea into a usable service.
               </p>
             </div>
           </section>
 
           <section id="learning" class="mb-4">
-            <h2 class="font-serif border-bottom pb-1">Learning / Progress</h2>
+            <h2 class="font-serif border-bottom pb-1">
+              Learning &amp; Development
+            </h2>
             <p>
-              Tracking technical growth, ongoing projects, and key milestones
-              during my academic journey at Epitech Paris and EMSI.
+              Current priorities include strengthening C and Python
+              fundamentals, building more complete web projects, practising
+              Linux and command-line workflows, and developing a stronger
+              foundation in cybersecurity. I document what I build, what breaks,
+              and what I learn so progress is visible rather than just claimed.
             </p>
           </section>
 
-          <!-- Section Contact Form (Special:EmailUser Style) -->
+          <!-- Section Contact Form -->
           <section id="contact" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">Contact</h2>
             <p class="text-muted small">
-              You can send an email message to Abderrahim Bahraoui using the
-              form below.
+              For internship opportunities, project collaborations, or
+              professional enquiries, you can reach me by email or use the form
+              below.
             </p>
 
             <form
@@ -491,17 +671,19 @@
             <div class="row small mt-3">
               <div class="col-md-6">
                 <ol class="ps-3 mb-0 references-list">
-                  <li id="cite_note-1">
+                  <li>
                     Personal portfolio and biography.
-                    <a href="#">bahraoui.vercel.app</a>. Retrieved 8 October
-                    2026.
+                    <a href="https://abduu898.github.io/potfolio/#"
+                      >bahraoui.vercel.app</a
+                    >. Retrieved 8 October 2026.
                   </li>
-                  <li id="cite_note-2">
+                  <li>
                     LinkedIn profile.
-                    <a href="#">linkedin.com/in/abderrahimbahraoui</a>.
-                    Retrieved 8 October 2026.
+                    <a href="https://abduu898.github.io/potfolio/#"
+                      >linkedin.com/in/abderrahimbahraoui</a
+                    >. Retrieved 8 October 2026.
                   </li>
-                  <li id="cite_note-3">
+                  <li>
                     GitHub profile and repositories.
                     <a href="https://github.com/Abduu898">github.com/Abduu898</a
                     >. Retrieved 8 October 2026.
@@ -509,14 +691,17 @@
                 </ol>
               </div>
               <div class="col-md-6">
-                <ol class="ps-3 mb-0 references-list" start="4">
-                  <li id="cite_note-4">
-                    Epitech Discover IT Programme. <a href="#">epitech.eu</a>.
-                    Retrieved 8 October 2026.
+                <ol class="ps-3 mb-0 references-list">
+                  <li>
+                    Epitech Discover IT Programme.
+                    <a href="https://abduu898.github.io/potfolio/#"
+                      >epitech.eu</a
+                    >. Retrieved 8 October 2026.
                   </li>
-                  <li id="cite_note-5">
-                    EMSI Tanger portal. <a href="#">emsi.ma</a>. Retrieved 8
-                    October 2026.
+                  <li>
+                    EMSI Tanger portal.
+                    <a href="https://abduu898.github.io/potfolio/#">emsi.ma</a>.
+                    Retrieved 8 October 2026.
                   </li>
                 </ol>
               </div>
@@ -527,27 +712,25 @@
             <h2 class="font-serif border-bottom pb-1">
               Why Wiki for this Portfolio?
             </h2>
-            <div class="border p-3 mt-3 wiki-rationale-box">
-              <p class="mb-3 fw-bold">
-                One goal: what would be the most effective structure for a
-                recruiter to parse and understand my background and skills?
-              </p>
-              <p class="mb-0">
-                Wikipedia is perhaps the <strong>MOST</strong> easily recognized
-                interface on the internet - it has iterated through hundreds of
-                designs to create the perfect balance of information density and
-                readability, and using it presents my information in a manner
-                any persons mind is instantly familiar too. I'm sacrificing
-                animations and floating stars for a nearly instant recognition
-                in the readers mind.
-              </p>
-            </div>
+            <p>
+              One goal: what would be the most effective structure for a
+              recruiter to parse and understand my background and skills?
+            </p>
+            <p>
+              Wikipedia is perhaps the <strong>MOST</strong> easily recognized
+              interface on the internet - it has iterated through hundreds of
+              designs to create the perfect balance of information density and
+              readability, and using it presents my information in a manner any
+              persons mind is instantly familiar too. I'm sacrificing animations
+              and floating stars for a nearly instant recognition in the readers
+              mind.
+            </p>
           </section>
 
           <div
             class="categories-bar border-top border-bottom py-2 mt-5 mb-4 small"
           >
-            <strong class="text-dark">Categories:</strong>
+            <strong class="categories-title">Categories:</strong>
             <a
               href="https://en.wikipedia.org/wiki/Computer_science"
               class="ms-1"

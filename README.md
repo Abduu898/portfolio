@@ -14,6 +14,9 @@ This portfolio serves as a central showcase of my technical journey, designed ac
 - **Clear Reflection:** Documents project contexts, technologies, challenges encountered, and key learnings across the academic year.
 
 ---
+## 🎨 Credits & Trademarks
+- **Wikipedia Vector 2022 Theme:** Design inspired by MediaWiki / Wikipedia.
+- **Wikimedia Assets:** The Wikipedia wordmark and logo belong to the [Wikimedia Foundation](https://wikimediafoundation.org/). Used under educational fair use for personal academic portfolio representation.
 
 ## 🗂️ Repository Structure
 

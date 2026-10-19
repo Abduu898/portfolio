@@ -96,6 +96,11 @@
          </a>
         </li>
         <li>
+         <a href="#gallery">
+          Gallery
+         </a>
+        </li>
+        <li>
          <a href="#contact">
           Contact
          </a>
@@ -197,8 +202,8 @@
        Tools
       </a>
       <div aria-labelledby="toolsDropdown" class="dropdown-menu talk-dropdown-menu shadow-sm py-2 px-3 mt-1">
-       <a class="dropdown-item wiki-talk-link" download="" href="assets/cv_Abderrahim_Bahraoui%20(1).pdf">
-        Download Resume (PDF)
+       <a class="dropdown-item wiki-talk-link" href="assets/cv.html" rel="noopener" target="_blank">
+        View Resume
        </a>
        <a class="dropdown-item wiki-talk-link" href="#" onclick=" window.print(); return false; ">
         Print Page
@@ -306,8 +311,8 @@
          Resume
         </th>
         <td>
-         <a download="" href="assets/cv_Abderrahim_Bahraoui%20(1).pdf">
-          Download CV
+         <a href="assets/cv.html" rel="noopener" target="_blank">
+          View CV
          </a>
         </td>
        </tr>
@@ -398,6 +403,11 @@
       <li>
        <a href="learning.html">
         Learning &amp; Development
+       </a>
+      </li>
+      <li>
+       <a href="#gallery">
+        Gallery
        </a>
       </li>
       <li>
@@ -614,6 +624,86 @@
         Read full progression reflection →
        </a>
       </p>
+     </section>
+     <section class="mb-4" id="gallery">
+      <h2 class="font-serif border-bottom pb-1">
+       Gallery
+      </h2>
+      <p class="text-muted">
+       Project highlights — use the arrows to browse.
+      </p>
+      <div class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="5000" id="projectGallery">
+       <div class="carousel-indicators">
+        <button aria-label="Slide 1: Portfolio Website" class="active" data-bs-slide-to="0" data-bs-target="#projectGallery" type="button"></button>
+        <button aria-label="Slide 2: C and Systems" data-bs-slide-to="1" data-bs-target="#projectGallery" type="button"></button>
+        <button aria-label="Slide 3: Arduino Elevator" data-bs-slide-to="2" data-bs-target="#projectGallery" type="button"></button>
+        <button aria-label="Slide 4: Cybersecurity Labs" data-bs-slide-to="3" data-bs-target="#projectGallery" type="button"></button>
+        <button aria-label="Slide 5: Digital Projects" data-bs-slide-to="4" data-bs-target="#projectGallery" type="button"></button>
+        <button aria-label="Slide 6: Enactus and FindNgo" data-bs-slide-to="5" data-bs-target="#projectGallery" type="button"></button>
+       </div>
+       <div class="carousel-inner">
+        <div class="carousel-item active">
+         <a class="text-decoration-none" href="projects/portfolio.html">
+          <div class="gallery-placeholder rounded" role="img" aria-label="Portfolio website image placeholder">
+           <i class="bi bi-image" aria-hidden="true"></i>
+           <span>Add portfolio screenshot</span>
+          </div>
+          <div class="mt-2 fw-semibold">Portfolio Website</div>
+         </a>
+        </div>
+        <div class="carousel-item">
+         <a class="text-decoration-none" href="projects/c-systems.html">
+          <div class="gallery-placeholder rounded" role="img" aria-label="C and systems project image placeholder">
+           <i class="bi bi-image" aria-hidden="true"></i>
+           <span>Add C project screenshot</span>
+          </div>
+          <div class="mt-2 fw-semibold">C &amp; Systems</div>
+         </a>
+        </div>
+        <div class="carousel-item">
+         <a class="text-decoration-none" href="projects/arduino-elevator.html">
+          <div class="gallery-placeholder rounded" role="img" aria-label="Arduino elevator project image placeholder">
+           <i class="bi bi-image" aria-hidden="true"></i>
+           <span>Add Arduino project photo</span>
+          </div>
+          <div class="mt-2 fw-semibold">Arduino Elevator</div>
+         </a>
+        </div>
+        <div class="carousel-item">
+         <a class="text-decoration-none" href="projects/cybersecurity.html">
+          <div class="gallery-placeholder rounded" role="img" aria-label="Cybersecurity project image placeholder">
+           <i class="bi bi-image" aria-hidden="true"></i>
+           <span>Add cybersecurity screenshot</span>
+          </div>
+          <div class="mt-2 fw-semibold">Cybersecurity Labs</div>
+         </a>
+        </div>
+        <div class="carousel-item">
+         <a class="text-decoration-none" href="projects/digital-projects.html">
+          <div class="gallery-placeholder rounded" role="img" aria-label="Digital projects image placeholder">
+           <i class="bi bi-image" aria-hidden="true"></i>
+           <span>Add digital project photo</span>
+          </div>
+          <div class="mt-2 fw-semibold">Digital Projects</div>
+         </a>
+        </div>
+        <div class="carousel-item">
+         <a class="text-decoration-none" href="projects/enactus-findngo.html">
+          <div class="gallery-placeholder rounded" role="img" aria-label="Enactus project image placeholder">
+           <i class="bi bi-image" aria-hidden="true"></i>
+           <span>Add Enactus project image</span>
+          </div>
+          <div class="mt-2 fw-semibold">Enactus &amp; FindNgo</div>
+         </a>
+        </div>
+       </div>
+       <button aria-label="Previous project" class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#projectGallery" type="button">
+        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+       </button>
+       <button aria-label="Next project" class="carousel-control-next" data-bs-slide="next" data-bs-target="#projectGallery" type="button">
+        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+       </button>
+      </div>
      </section>
      <!-- Section Contact Form -->
      <section class="mb-4" id="contact">

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abderrahim Bahraoui – Étudiant en ingénierie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #7a625d;
+    --ink: #222;
+    --muted: #555;
+    --bg: #fff;
+    --font: "Montserrat", "Poppins", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: #f1eeed;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .page {
+    max-width: 960px;
+    margin: 32px auto;
+    background: var(--bg);
+    padding: 48px 56px 56px;
+    box-shadow: 0 2px 20px rgba(0,0,0,.08);
+  }
+
+  /* Header */
+  header { padding-bottom: 22px; border-bottom: 3px solid var(--accent); margin-bottom: 36px; }
+  h1 {
+    font-weight: 300;
+    font-size: clamp(30px, 6vw, 46px);
+    letter-spacing: .08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+  h1 b { font-weight: 800; font-style: italic; color: var(--accent); }
+  .role {
+    margin-top: 22px;
+    font-size: 17px;
+    letter-spacing: .38em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  /* Layout */
+  .grid { display: grid; grid-template-columns: 290px 1fr; gap: 0 40px; }
+
+  h2 {
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid var(--accent);
+    margin-bottom: 18px;
+  }
+  aside section, main section { margin-bottom: 34px; }
+
+  /* Sidebar */
+  .contact li { list-style: none; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; font-size: 13.5px; word-break: break-word; }
+  .contact svg { flex: none; width: 18px; height: 18px; margin-top: 3px; fill: var(--accent); }
+
+  .skills h3 { font-weight: 800; font-style: italic; font-size: 14px; margin: 14px 0 4px; }
+  .skills h3::before { content: "• "; font-style: normal; }
+  .skills p { font-size: 13.5px; margin: 0 0 4px 14px; }
+  .skills u { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  .plain li { list-style: none; font-size: 14px; margin-left: 4px; }
+  .plain li::before { content: "• "; }
+  .interests h2 { letter-spacing: .2em; text-transform: none; font-size: 20px; }
+
+  /* Timeline column */
+  main { position: relative; padding-left: 36px; border-left: 2px solid var(--accent); }
+  main section { position: relative; }
+  main section::before {
+    content: "";
+    position: absolute; left: -43px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #fff; border: 2px solid var(--accent);
+  }
+  main h2 { border-bottom-width: 1.5px; }
+
+  .profil p { font-style: italic; text-align: justify; font-size: 14px; line-height: 1.75; }
+
+  .item { margin-bottom: 26px; }
+  .item-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+  .item-head h3 { font-weight: 800; font-style: italic; font-size: 14px; }
+  .date { font-size: 13px; white-space: nowrap; }
+  .school { font-size: 14px; margin-top: 4px; }
+
+  .item ul { margin: 12px 0 0 20px; font-size: 14px; }
+  .item li { margin-bottom: 4px; }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .page { margin: 0; padding: 32px 22px 40px; box-shadow: none; }
+    .grid { grid-template-columns: 1fr; }
+    main { margin-top: 10px; padding-left: 26px; }
+    main section::before { left: -33px; }
+    .role { letter-spacing: .22em; font-size: 14px; }
+    .profil p { text-align: left; }
+  }
+
+  /* Print / save as PDF */
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; max-width: none; padding: 20px 28px; }
+    a { color: inherit; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Abderrahim <b>Bahraoui</b></h1>
+    <p class="role">Étudiant en ingénierie</p>
+  </header>
+
+  <div class="grid">
+
+    <aside>
+      <section class="contact">
+        <h2>Contact</h2>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            <a href="tel:+212688428991">+212 688-428991</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4.5 7v1.4L12 13.4l7.5-5V7z"/></svg>
+            <a href="mailto:bahraoui.abdrrahim@gmail.com">bahraoui.abdrrahim@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            <a href="https://github.com/Abduu898" target="_blank" rel="noopener">https://github.com/Abduu898</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2.3 7.2V18h2.4v-7.8zM7.5 6.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8zm3.2 3.4V18h2.4v-4.1c0-1 .5-1.7 1.4-1.7s1.3.6 1.3 1.7V18h2.4v-4.5c0-2-1-3.4-2.8-3.4-1 0-1.8.5-2.3 1.2v-1z"/></svg>
+            <a href="https://www.linkedin.com/in/abdrrahim-bahraoui" target="_blank" rel="noopener">https://www.linkedin.com/in/abdrrahim-bahraoui</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="skills">
+        <h2>Compétences</h2>
+        <h3>Compétences Techniques :</h3>
+        <p>- <u>Langages</u> : Python, C, Java, SQL..</p>
+        <p>- <u>Outils &amp; Automation</u> : n8n, Git/GitHub, WordPress, Shopify.</p>
+        <h3>Digital &amp; Business :</h3>
+        <p>- <u>Marketing</u> : Stratégie Social Media, SEO, ADS, Growth Hacking.</p>
+        <p>- <u>Management</u> : Gestion de stock, Négociation fournisseurs.</p>
+        <h3>Soft Skills :</h3>
+        <p>- Leadership (Scouts/Enactus), Esprit d'analyse, Résolution de problèmes..</p>
+      </section>
+
+      <section class="interests">
+        <h2>Centre d'interets</h2>
+        <ul class="plain">
+          <li>Entrepreneuriat</li>
+          <li>Fitness</li>
+          <li>Lecture (business, psychologie)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Langues</h2>
+        <ul class="plain">
+          <li>Arabe</li>
+          <li>Français</li>
+          <li>Anglais</li>
+          <li>Espagnol (notions de base)</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main>
+      <section class="profil">
+        <h2>Profil</h2>
+        <p>Étudiant en cycle préparatoire à l'EMSI, rigoureux et passionné par l'ingénierie et l'innovation technique. Fort d'une solide base académique en algorithmique et programmation, je me distingue par ma capacité à appliquer les concepts théoriques à des projets concrets. Engagé et polyvalent, je cherche à mettre mon esprit d'analyse et ma curiosité technologique au service de mon parcours académique.</p>
+      </section>
+
+      <section>
+        <h2>Formation</h2>
+        <div class="item">
+          <div class="item-head">
+            <h3>2 éme année cycle préparatoire ingénierie</h3>
+          </div>
+          <div class="item-head school">
+            <span>Spécialité génie informatique | École EMSI Tanger</span>
+            <span class="date">l'année en cours</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-head">
+            <h3>Baccalauréat</h3>
+          </div>
+          <div class="item-head school">
+            <span>Spécialité sciences physiques | École Bir Anzarane Tanger</span>
+            <span class="date">2024</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Expériences</h2>
+        <div class="item">
+          <div class="item-head">
+            <h3>Développeur systèmes - Shell unix</h3>
+            <span class="date">2025 - Présent</span>
+          </div>
+          <ul>
+            <li>Développement d'un shell Unix fonctionnel en C reproduisant le comportement essentiel de ZSH. Implémentation de l'exécution des commandes, des pipes, des redirections et des commandes intégrée.</li>
+            <li>Gestion manuelle de la mémoire, prise en compte des cas limites et contrôle des processus.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="item-head">
+            <h3>Développeur E-commerce &amp; Web</h3>
+            <span class="date">2022 - Présent</span>
+          </div>
+          <ul>
+            <li>Lancement et développement de ma propre Brand dans Shopify (sourcing de produits, marketing, optimisation des conversions ).</li>
+            <li>Conception et déploiement de sites web pour des marques de vêtements via WordPress &amp; Shopify (gestion de projets et marques actives). Pilotage de la croissance grâce à l'analyse de données de performance sur plusieurs projets.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>

@@ -103,5 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.getElementById("monoFontToggle")?.addEventListener("click", (event) => {
   event.preventDefault();
-  document.body.classList.toggle("mono-mode");
+  const isMono = document.body.classList.toggle("mono-mode");
+  localStorage.setItem("monoFont", isMono ? "enabled" : "disabled");
 });
+
+if (localStorage.getItem("monoFont") === "enabled") {
+  document.body.classList.add("mono-mode");
+}

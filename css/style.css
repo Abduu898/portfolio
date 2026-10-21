@@ -427,7 +427,7 @@ body.mono-mode h3 {
 }
 
 .homepage-gallery-image {
-  max-height: 260px;
+  max-height: 400px;
   object-fit: contain;
 }
 

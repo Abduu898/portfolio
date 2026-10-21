@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ==================== Contact form validation ====================
+  //  Contact form validation 
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
 
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ==================== Navbar Scroll Title Effect ====================
+  //  Navbar Scroll Title Effect 
   const navLogo = document.getElementById("nav-logo");
   const navTitle = document.getElementById("nav-title");
 

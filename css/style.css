@@ -800,6 +800,10 @@ body.dark .table-of-contents {
   color: #eaecf0;
 }
 
+body.dark .infobox > .text-muted {
+  color: #c8ccd1 !important;
+}
+
 body.dark .infobox-header {
   background-color: #2a4a7a;
   color: #eaecf0;

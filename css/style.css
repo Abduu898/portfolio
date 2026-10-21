@@ -411,6 +411,12 @@ a:hover {
   font-size: 2rem;
 }
 
+.project-gallery-image {
+  max-height: 420px;
+  object-fit: contain;
+  background-color: #f8f9fa;
+}
+
 .content-body section {
   margin-bottom: 1.5rem;
 }

@@ -51,9 +51,9 @@
       </div>
     </header>
     <div class="container-fluid py-3 px-4 wiki-layout-wrapper">
-      <h1 class="firstHeading font-serif mb-1">4.4 Cybersecurity Labs</h1>
+      <h1 class="firstHeading font-serif mb-1">4.4 Cybersecurity Projects</h1>
       <div class="text-muted small mb-0">
-        Defensive security · Beginner practical exercises
+        Browser security · AI-agent security · Practical security labs
       </div>
       <div class="wiki-tabs-wrapper">
         <div class="d-flex">
@@ -71,16 +71,20 @@
           >
             <tbody>
               <tr class="border-top">
-                <th scope="row">Category</th>
-                <td>Guided security labs</td>
+                <th scope="row">Projects</th>
+                <td>LinkShield · AgentHoneyPot</td>
+              </tr>
+              <tr class="border-top">
+                <th scope="row">Focus</th>
+                <td>URL analysis, deception, and AI-agent security</td>
               </tr>
               <tr class="border-top">
                 <th scope="row">Technologies</th>
-                <td>Web, browser tools, Linux fundamentals</td>
+                <td>JavaScript, Chrome APIs, Python</td>
               </tr>
               <tr class="border-top">
                 <th scope="row">Status</th>
-                <td>Beginner ongoing study</td>
+                <td>Experimental and ongoing development</td>
               </tr>
               <tr class="border-top">
                 <th scope="row">Date</th>
@@ -94,7 +98,7 @@
                     target="_blank"
                     rel="noopener"
                     >GitHub profile</a
-                  >; lab notes are not listed publicly
+                  >
                 </td>
               </tr>
             </tbody>
@@ -103,42 +107,99 @@
         <main class="content-body">
           <section id="context" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">
-              Context &amp; Objective
+              Context &amp; Objectives
             </h2>
             <p>
-              These beginner exercises support my interest in defensive
-              cybersecurity and how web systems can be assessed. The goal is to
-              learn security fundamentals through guided, authorized
-              environments and to build a careful, evidence-based testing
-              process.
+              These projects explore practical defensive security from two
+              complementary perspectives: protecting users from malicious
+              links and protecting AI-agent tool interfaces from unauthorized
+              actions. The objective is to build security-focused software that
+              detects suspicious behavior, limits exposure, and produces useful
+              evidence for investigation.
             </p>
           </section>
-          <section id="architecture" class="mb-4">
+          <section id="linkshield" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">
-              Architecture &amp; Technologies
+              LinkShield
             </h2>
             <p>
-              The current work consists of guided web reconnaissance and
-              security fundamentals labs, including practice on TryHackMe. The
-              focus is on understanding the structure of web applications,
-              common risks, and the tools and methods used to investigate them
-              in a controlled lab.
+              LinkShield is a Google Chrome extension built with Manifest V3
+              that inspects and analyzes URL structures locally using a
+              lightweight heuristic detection engine. It is designed to help
+              users identify suspicious links before visiting them without
+              sending URLs to an external analysis service.
+            </p>
+            <h3>Key features</h3>
+            <ul>
+              <li>Real-time link verification.</li>
+              <li>Client-side URL parsing.</li>
+              <li>Zero-latency local execution without external API dependencies.</li>
+              <li>
+                Visual risk indicators for potential phishing or
+                typo-squatted domains.
+              </li>
+            </ul>
+            <p>
+              <strong>Stack:</strong> JavaScript (ES6+), Chrome Extension API
+              (Manifest V3), HTML5, and CSS3.
+            </p>
+            <p>
+              <a
+                href="https://github.com/Abduu898/LinkShield"
+                target="_blank"
+                rel="noopener"
+                >View the LinkShield repository</a
+              >
             </p>
           </section>
-          <section id="challenges" class="mb-4">
+          <section id="agent-honeypot" class="mb-4">
             <h2 class="font-serif border-bottom pb-1">
-              Challenges &amp; Key Learnings
+              AgentHoneyPot
             </h2>
             <p>
-              A key challenge is distinguishing useful evidence from
-              assumptions. I work through a lab by documenting the objective,
-              following its authorized scope, recording observations, and
-              checking each conclusion against the available evidence.
+              AgentHoneyPot is an experimental deception framework developed to
+              safeguard AI agents and tool-calling interfaces against
+              unauthorized data access and prompt-injection attacks. It adds a
+              controlled deception layer between an agent and sensitive
+              resources so suspicious activity can be contained and studied.
+            </p>
+            <h3>Key features</h3>
+            <ul>
+              <li>Detection of anomalous tool requests.</li>
+              <li>Interception of potential exploit payloads.</li>
+              <li>Routing of malicious actors to synthetic decoy datasets.</li>
+              <li>
+                Detailed forensic artifact logging for security analyst
+                inspection.
+              </li>
+            </ul>
+            <p>
+              <strong>Stack:</strong> Python, threat deception architecture,
+              and AI safety and security protocols.
             </p>
             <p>
-              These exercises are still introductory. I am building fundamentals
-              before attempting more advanced testing or presenting lab results
-              as professional security work.
+              <a
+                href="https://github.com/Abduu898/HoneyPot-Agent"
+                target="_blank"
+                rel="noopener"
+                >View the AgentHoneyPot repository</a
+              >
+            </p>
+          </section>
+          <section id="labs" class="mb-4">
+            <h2 class="font-serif border-bottom pb-1">
+              Hands-on Security Labs
+            </h2>
+            <p>
+              Alongside these projects, I continue practical exercises in
+              authorized learning environments such as TryHackMe. For example,
+              some labs provide an image that must be examined for metadata and
+              other clues. These exercises strengthen my observation,
+              evidence-gathering, and basic digital forensics skills.
+            </p>
+            <p>
+              The labs remain educational and controlled, with conclusions
+              based on the evidence available in each challenge.
             </p>
           </section>
           <section id="links" class="mb-4">
@@ -146,6 +207,22 @@
               Links &amp; Documentation
             </h2>
             <ul>
+              <li>
+                <a
+                  href="https://github.com/Abduu898/LinkShield"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkShield source repository</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Abduu898/HoneyPot-Agent"
+                  target="_blank"
+                  rel="noopener"
+                  >AgentHoneyPot source repository</a
+                >
+              </li>
               <li>
                 <a href="https://tryhackme.com/" target="_blank" rel="noopener"
                   >TryHackMe learning platform</a
@@ -166,7 +243,7 @@
                   rel="noopener"
                   >GitHub profile</a
                 >
-                (no dedicated public lab repository listed).
+                for additional projects and source code.
               </li>
             </ul>
           </section>
@@ -174,14 +251,40 @@
             <h2 class="font-serif border-bottom pb-1">Gallery</h2>
             <div class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="5000" id="projectGallery">
               <div class="carousel-indicators">
-                <button aria-label="Photo 1" class="active" data-bs-slide-to="0" data-bs-target="#projectGallery" type="button"></button>
-                <button aria-label="Photo 2" data-bs-slide-to="1" data-bs-target="#projectGallery" type="button"></button>
-                <button aria-label="Photo 3" data-bs-slide-to="2" data-bs-target="#projectGallery" type="button"></button>
+                <button aria-label="LinkShield safe URL analysis" class="active" data-bs-slide-to="0" data-bs-target="#projectGallery" type="button"></button>
+                <button aria-label="LinkShield suspicious URL analysis" data-bs-slide-to="1" data-bs-target="#projectGallery" type="button"></button>
+                <button aria-label="AgentHoneyPot security operations dashboard" data-bs-slide-to="2" data-bs-target="#projectGallery" type="button"></button>
+                <button aria-label="AgentHoneyPot simulated customer interface" data-bs-slide-to="3" data-bs-target="#projectGallery" type="button"></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active"><div class="gallery-placeholder rounded" role="img" aria-label="Project photo 1 placeholder"><i class="bi bi-image" aria-hidden="true"></i><span>Add project photo 1</span></div></div>
-                <div class="carousel-item"><div class="gallery-placeholder rounded" role="img" aria-label="Project photo 2 placeholder"><i class="bi bi-image" aria-hidden="true"></i><span>Add project photo 2</span></div></div>
-                <div class="carousel-item"><div class="gallery-placeholder rounded" role="img" aria-label="Project photo 3 placeholder"><i class="bi bi-image" aria-hidden="true"></i><span>Add project photo 3</span></div></div>
+                <div class="carousel-item active">
+                  <img
+                    src="../assets/cyber%20Assets/Screenshot%202026-10-21%20100849.png"
+                    class="d-block w-100 rounded project-gallery-image"
+                    alt="LinkShield analyzing a safe PayPal URL"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/cyber%20Assets/Screenshot%202026-10-21%20100823.png"
+                    class="d-block w-100 rounded project-gallery-image"
+                    alt="LinkShield detecting a suspicious typo-squatted URL"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/cyber%20Assets/Screenshot%202026-10-21%20100543.png"
+                    class="d-block w-100 rounded project-gallery-image"
+                    alt="AgentHoneyPot security operations and incident review dashboard"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/cyber%20Assets/Screenshot%202026-10-21%20100413.png"
+                    class="d-block w-100 rounded project-gallery-image"
+                    alt="AgentHoneyPot simulated customer-facing application"
+                  />
+                </div>
               </div>
               <button aria-label="Previous photo" class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#projectGallery" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span></button>
               <button aria-label="Next photo" class="carousel-control-next" data-bs-slide="next" data-bs-target="#projectGallery" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span></button>

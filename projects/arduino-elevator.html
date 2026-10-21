@@ -76,7 +76,7 @@
               </tr>
               <tr class="border-top">
                 <th scope="row">Technologies</th>
-                <td>Arduino Uno, I2C LCD, embedded C/C++</td>
+                <td>Arduino, IR sensors, motor control, embedded C/C++</td>
               </tr>
               <tr class="border-top">
                 <th scope="row">Status</th>
@@ -90,11 +90,11 @@
                 <th scope="row">Source</th>
                 <td>
                   <a
-                    href="https://github.com/Abduu898"
+                    href="https://github.com/Abduu898/Arduino-Elevator-Control-System-IR-Sensors-Motor-"
                     target="_blank"
                     rel="noopener"
-                    >GitHub profile</a
-                  >; project-specific repository not listed
+                    >Project repository</a
+                  >
                 </td>
               </tr>
             </tbody>
@@ -117,10 +117,10 @@
               Architecture &amp; Technologies
             </h2>
             <p>
-              An Arduino Uno runs the control logic, while an I2C-connected LCD
-              provides a compact display. The project brings together board
-              setup, hardware connections, input and state handling, and display
-              updates.
+              An Arduino Uno runs the control logic for a three-floor elevator.
+              Push buttons request a floor, IR sensors detect the elevator's
+              position, a motor controls movement, and a seven-segment display
+              shows the current floor.
             </p>
           </section>
           <section id="challenges" class="mb-4">
@@ -145,12 +145,11 @@
             <ul>
               <li>
                 <a
-                  href="https://github.com/Abduu898"
+                  href="https://github.com/Abduu898/Arduino-Elevator-Control-System-IR-Sensors-Motor-"
                   target="_blank"
                   rel="noopener"
-                  >GitHub profile</a
-                >
-                (no dedicated public repository listed for this prototype).
+                  >Arduino Elevator Control System repository</a
+                >.
               </li>
               <li>
                 <a
@@ -162,10 +161,10 @@
               </li>
               <li>
                 <a
-                  href="https://docs.arduino.cc/libraries/liquidcrystal-i2c/"
+                  href="https://docs.arduino.cc/hardware/uno-rev3/"
                   target="_blank"
                   rel="noopener"
-                  >Arduino LiquidCrystal I2C library reference</a
+                  >Arduino Uno documentation</a
                 >
               </li>
             </ul>
@@ -174,14 +173,24 @@
             <h2 class="font-serif border-bottom pb-1">Gallery</h2>
             <div class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="5000" id="projectGallery">
               <div class="carousel-indicators">
-                <button aria-label="Photo 1" class="active" data-bs-slide-to="0" data-bs-target="#projectGallery" type="button"></button>
-                <button aria-label="Photo 2" data-bs-slide-to="1" data-bs-target="#projectGallery" type="button"></button>
-                <button aria-label="Photo 3" data-bs-slide-to="2" data-bs-target="#projectGallery" type="button"></button>
+                <button aria-label="Arduino elevator photo 1" class="active" data-bs-slide-to="0" data-bs-target="#projectGallery" type="button"></button>
+                <button aria-label="Arduino elevator photo 2" data-bs-slide-to="1" data-bs-target="#projectGallery" type="button"></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active"><div class="gallery-placeholder rounded" role="img" aria-label="Project photo 1 placeholder"><i class="bi bi-image" aria-hidden="true"></i><span>Add project photo 1</span></div></div>
-                <div class="carousel-item"><div class="gallery-placeholder rounded" role="img" aria-label="Project photo 2 placeholder"><i class="bi bi-image" aria-hidden="true"></i><span>Add project photo 2</span></div></div>
-                <div class="carousel-item"><div class="gallery-placeholder rounded" role="img" aria-label="Project photo 3 placeholder"><i class="bi bi-image" aria-hidden="true"></i><span>Add project photo 3</span></div></div>
+                <div class="carousel-item active">
+                  <img
+                    src="../assets/arduino%20assets/WhatsApp%20Image%202026-06-17%20at%2013.30.19.jpeg"
+                    class="d-block w-100 rounded project-gallery-image arduino-gallery-image"
+                    alt="Arduino elevator prototype with motor and sensors"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/arduino%20assets/WhatsApp%20Image%202026-06-17%20at%2013.21.49.jpeg"
+                    class="d-block w-100 rounded project-gallery-image arduino-gallery-image"
+                    alt="Arduino elevator prototype wiring and control components"
+                  />
+                </div>
               </div>
               <button aria-label="Previous photo" class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#projectGallery" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span></button>
               <button aria-label="Next photo" class="carousel-control-next" data-bs-slide="next" data-bs-target="#projectGallery" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span></button>

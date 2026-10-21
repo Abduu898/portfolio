@@ -323,11 +323,6 @@ a:hover {
   border-radius: 2px;
 }
 
-.toc-hide {
-  cursor: pointer;
-  color: #3366cc;
-}
-
 /* ==========================================================================
    6. RIGHT INFOBOX (FLOATED RIGHT)
    ========================================================================== */
@@ -415,6 +410,10 @@ a:hover {
   max-height: 420px;
   object-fit: contain;
   background-color: #f8f9fa;
+}
+
+.arduino-gallery-image {
+  max-height: 300px;
 }
 
 .content-body section {

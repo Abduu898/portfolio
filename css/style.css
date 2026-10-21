@@ -519,15 +519,6 @@ body.mono-mode h3 {
   line-height: 1.55;
 }
 
-.wiki-rationale-box {
-  background-color: #ffffff;
-  color: #202122;
-  border-color: #a2a9b1 !important;
-  font-size: 0.875rem;
-  line-height: 1.65;
-  border-radius: 0;
-}
-
 .categories-bar {
   border-color: #a2a9b1 !important;
   background-color: #ffffff;
@@ -737,8 +728,7 @@ body.dark p {
   color: #eaecf0;
 }
 
-body.dark .wiki-layout-wrapper > .text-muted,
-body.dark .main-container > .text-muted {
+body.dark .wiki-layout-wrapper > .text-muted {
   color: #eaecf0 !important;
 }
 
@@ -808,13 +798,6 @@ body.dark .table-of-contents {
   background-color: #1c2026 !important;
   border-color: #3a4048 !important;
   color: #eaecf0;
-}
-
-body.dark .wiki-rationale-box,
-body.dark .wiki-rationale-box p {
-  background-color: #1c2026 !important;
-  color: #eaecf0 !important;
-  border-color: #3a4048 !important;
 }
 
 body.dark .infobox-header {

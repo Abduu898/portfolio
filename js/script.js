@@ -45,16 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const donateLink = document.getElementById("donateLink");
-  if (donateLink) {
-    donateLink.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.alert(
-        "Hey, it's Abderrahim! Thanks for wanting to donate! No money was taken; this button is just a thank-you. Your support still means a lot. Stay curious and keep building cool things!",
-      );
-    });
-  }
-
   // ==================== Contact form validation ====================
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
@@ -87,25 +77,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ==================== Navbar Scroll Title Effect ====================
-  // ==================== Navbar Scroll Title Effect (Smooth Fade) ====================
   const navLogo = document.getElementById("nav-logo");
   const navTitle = document.getElementById("nav-title");
 
   if (navLogo && navTitle) {
-    // Initialisation au chargement
     navLogo.classList.add("nav-visible");
     navTitle.classList.add("nav-hidden");
 
     window.addEventListener("scroll", function () {
       if (window.scrollY > 120) {
-        // Scroll vers le bas : masque le logo, affiche le nom
         navLogo.classList.remove("nav-visible");
         navLogo.classList.add("nav-hidden");
 
         navTitle.classList.remove("nav-hidden");
         navTitle.classList.add("nav-visible");
       } else {
-        // En haut de page : affiche le logo, masque le nom
         navLogo.classList.remove("nav-hidden");
         navLogo.classList.add("nav-visible");
 
@@ -115,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-document.getElementById("monoFontToggle")?.addEventListener("click", (e) => {
-  e.preventDefault();
+document.getElementById("monoFontToggle")?.addEventListener("click", (event) => {
+  event.preventDefault();
   document.body.classList.toggle("mono-mode");
 });

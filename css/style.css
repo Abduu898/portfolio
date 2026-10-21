@@ -123,16 +123,6 @@ body.mono-mode h3 {
   transform: translateY(0);
 }
 
-.nav-logo-title {
-  font-size: 1.2rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo-subtitle {
-  font-size: 0.725rem;
-  font-family: sans-serif;
-}
-
 .search-wrapper {
   max-width: 480px;
 }

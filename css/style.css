@@ -63,6 +63,14 @@ a:hover {
   text-decoration: underline;
 }
 
+body.mono-mode,
+body.mono-mode .font-serif,
+body.mono-mode h1,
+body.mono-mode h2,
+body.mono-mode h3 {
+  font-family: "Courier New", Courier, monospace !important;
+}
+
 /* ==========================================================================
    2. HEADER & NAVBAR
    ========================================================================== */
@@ -414,6 +422,23 @@ a:hover {
 
 .arduino-gallery-image {
   max-height: 300px;
+}
+
+.portfolio-gallery-image {
+  max-height: 320px;
+}
+
+.c-gallery-image {
+  max-height: 320px;
+}
+
+.enactus-gallery-image {
+  max-height: 260px;
+}
+
+.homepage-gallery-image {
+  max-height: 220px;
+  object-fit: contain;
 }
 
 .content-body section {
